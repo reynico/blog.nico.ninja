@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Gamifying the Pwnagotchi"
 date:   2021-10-31 18:55:00 +0100
 categories: [linux, raspberry]
