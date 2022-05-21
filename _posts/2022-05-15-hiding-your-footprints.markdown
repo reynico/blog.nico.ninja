@@ -14,7 +14,7 @@ If you're in the mid-'30s you've probably been digging into forums, BBSs, mailin
 
 Nowadays the cancel culture is on fire, it's just a matter of time for someone to bring up that old, politically incorrect tweet you made 10 years ago to be completely canceled.
 
-Let's dive into a journey to remove our digital footprint from the Internet, but don't get me wrong! I'm super confident that everything posted on the Internet lives forever, but let's give it a try, at least, for hide some of our history back there (-:
+Let's dive into a journey to remove our digital footprint from the Internet, but don't get me wrong! I'm super confident that everything posted on the Internet lives forever, but let's give it a try, at least, to hide some of our history back there (-:
 
 - [Reconnaissance](#reconnaissance)
   - [Email addresses](#email-addresses)
@@ -45,7 +45,7 @@ The very first step is to do reconnaissance and find your footprints. This inclu
 
 ## Email addresses
 
-Let's start with an easy one: your email address(es). Just write down in Google every email address you've used in the last 20 years, quote-enclosed please.
+Let's start with an easy one: your email address(es). Just write down in Google every email address you've used in the last 20 years, quote-enclosed, please.
 [![email results](/assets/images/hiding-1/email-results.png)](/assets/images/hiding-1/email-results.png)
 _39 results, damn._
 
@@ -79,27 +79,27 @@ Ah, the juicy one. Reconnaissance here is quite easy: Just list the social netwo
 - Youtube
 - Vimeo
 - Reddit
-- Internet forums (not listing any in particular, the mileage may vary)
+- Internet forums (not listing any, in particular, the mileage may vary)
 
-Remember that we're not trying to hide from Google, or Facebook. Rather than that, it's just a matter of hiding us of what anyone can find about our person on the Internet.
+Remember that we're not trying to hide from Google or Facebook. Rather than that, it's just a matter of hiding what anyone can find about our person on the Internet.
 
 # Clean the mess!
 
-Well, it's time to put our hands down on the problem. Take this as a list of advices, it may not fit your needs or concerns!
+Well, it's time to put our hands down on the problem. Take this as a list of advice, it may not fit your needs or concerns!
 
 ## Email addresses
 
-- Create a new email account and use a pseudonym for the handle! An email address like `john.bennet@protonmail.com` should suffice, unless you really are John Bennet, right?
+- Create a new email account and use a pseudonym for the handle! An email address like `john.bennet@protonmail.com` should suffice, unless you are John Bennet, right?
 - Use the `+` operator when inputting your email addresses on sites you know they'll spam you. Ex: `john.bennet+ads@protonmail.com`. That way, you could setup email filters and do actions over them, for example, mark them as read or skip the inbox immediately.
   [![Protonmail filters](/assets/images/hiding-1/protonmail-filters.png)](/assets/images/hiding-1/protonmail-filters.png)
   _Protonmail offers a simple filtering solution based on email' fields_
 - Do not set a profile picture or an email signature. Trust me, no one cares about that.
-- Do not create an email address for each service you want to register to, rather than that, use the `+` operator to filter out mails later. If you want to sign up Twitter, use `john.bennet+twitter@protonmail.com`. That way you centralize all your emails in a single account, but with easy discoverability.
+- Do not create an email address for each service you want to register to, rather that, use the `+` operator to filter out emails later. If you want to sign up on Twitter, use `john.bennet+twitter@protonmail.com`. That way you centralize all your emails in a single account, but with easy discoverability.
 
 ## Usernames or handles
 
 - Try to use as many pseudonyms as you can. During account creation, Reddit offers auto-generated usernames you can pick, and by using a password manager like [LastPass](https://www.lastpass.com/) or [1Password](https://1password.com/) you don't even need to remember what's your username for that specific website! Think about that approach for each new account you create.
-- Care about what you post on the Internet. Remember: Things on Internet live forever, even if you delete them. Ideally, you just want to post zero messages on the Internet.
+- Care about what you post on the Internet. Remember: Things on the Internet live forever, even if you delete them. Ideally, you just want to post zero messages on the Internet.
 
 ## Personal data on websites
 
@@ -121,7 +121,7 @@ This section aims mostly to delete data posted on your behalf.
 [Shreddit](https://github.com/x89/Shreddit) is a great tool to remove your footprints on Reddit. It first edits the comment or post and replaces their content with [lorem ipsum](https://loremipsum.io/) data, then deletes the entry. If you directly delete the entry it'll just show the user as `[Deleted]` but the content will stay there. Not good. [Shreddit](https://github.com/x89/Shreddit) needs you to [create an app](https://www.reddit.com/prefs/apps/) (AKA an API key) on Reddit.
 
 ### Twitter
-Twitter have several datapoints from us: tweets, retweets and likes.
+Twitter has several data points from us: tweets, retweets, and likes.
 - **Deleting Twitter likes:** Go to your profile likes tab, i.e. `https://twitter.com/reynico/likes`, fire up a developers console and paste the following Javascript snippet:
 
 ```javascript
@@ -133,12 +133,12 @@ setInterval(() => {
 
 - **Deleting Twitter tweets:**
 1. Create an app on your [Twitter developer's portal](https://developer.twitter.com/en/apps) and setup a new application. Note `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET`, `TWITTER_ACCESS_TOKEN` and `TWITTER_ACCESS_TOKEN_SECRET`.
-2. Ask for your [Twitter archive](https://twitter.com/settings/your_twitter_data). You'll recive an email with a downloadable .zip file containing your Twitter archive.
+2. Ask for your [Twitter archive](https://twitter.com/settings/your_twitter_data). You'll receive an email with a downloadable .zip file containing your Twitter archive.
 3. Install [koenrh/delete-tweets](https://github.com/koenrh/delete-tweets) using pip: `python3 -m pip install delete-tweets`.
 4. Run it against your `tweet.js` archive: `delete-tweets --until 2022-05-20 tweet.js`
 
 ### Youtube and Vimeo
-- I have A LOT of videos uploaded on Youtube and Vimeo, some of them have over 14 years old! This is something that I refuse to delete or loss so I recommend you setting their visibility to **private**. That way you'll always have access to them.
+- I have A LOT of videos uploaded on Youtube and Vimeo, some of them have over 14 years old! This is something that I refuse to delete or lose so I recommend you set their visibility to **private**. That way you'll always have access to them.
 
 ### Facebook
 I haven't found any way to quickly set the visibility of my photos to hidden, so I took the (very long) time to set each photo album to private.
@@ -147,11 +147,11 @@ Profile pictures album cannot be set to private so you'll need to either delete 
 
 There are some additional tasks you could benefit from: [Privacy checkup](https://www.facebook.com/privacy/checkup/?source=settings_and_privacy) is a section aimed to change the visibility of your past and future posts as well as the profile information you set.
 
-1. Under **Who can see what you share** there's a quick form where you can review your profile information settings (set everything to "Only me"), and on the next page you'll see "Limit past posts". Tap on "Limit" and confirm. That way your past posts will be hidden.
-2. **Your data settings on Facebook** is really scary: During the time you probably accepted some Facebook permissions on several apps such as Spotify and so on. Review them on this section and delete the unused ones. You never know how much data those apps are getting from you!
+1. Under **Who can see what you share** there's a quick form where you can review your profile information settings (set everything to "Only Me"), and on the next page you'll see "Limit past posts". Tap on "Limit" and confirm. That way your past posts will be hidden.
+2. **Your data settings on Facebook** is really scary: During the time you probably accepted some Facebook permissions on several apps such as Spotify and so on. Review them in this section and delete the unused ones. You never know how much data those apps are getting from you!
 
 ### Instagram
-I'd suggest to set your personal Instagram account to private. There's no reason other than exposing a big amount the data open-wide to the Internet! Under Settings > Privacy:
+I'd suggest setting your personal Instagram account to private. There's no reason other than exposing a big amount of the data open-wide to the Internet! Under Settings > Privacy:
   1. Set your account to private.
   2. Allow mentions just from people you follow.
   3. Under message controls, set everything to "requests" so in case someone contacts you, you'll get those messages in a different folder.
@@ -163,12 +163,12 @@ Not much to do here, other than manually deleting posts or the whole account, bu
 This is a surgery-like operation as most of the forums (probably none, zero) don't provide an API to make programmatic operations over them, so you either manually delete each comment from the forums or you code a Javascript solution to be run on the developer's console.
 
 ## Multimedia
-Last but not least! It's been a time since mobile phones were built with incredible cameras on them. In a way, they seemed to be a camera with phone! Every picture and video you take with your shiny iPhone or Android mobile phone have extra metadata attached, such as camera settings and location information with very-high precision.
+Last but not least! It's been a time since mobile phones were built with incredible cameras on them. In a way, they seemed to be a camera with a phone! Every picture and video you take with your shiny iPhone or Android mobile phone has extra metadata attached, such as camera settings and location information with very high precision.
 
 [![Picture metadata](/assets/images/hiding-1/picture-metadata.png)](/assets/images/hiding-1/picture-metadata.png)
 _Picture metadata from an iPhone_
 
-[Imagemagick's convert](https://imagemagick.org/script/convert.php) has a `-strip` flag to remove EXIF data from a picture, which also convert HEIC pictures to JPG for compatibility matters:
+[Imagemagick's convert](https://imagemagick.org/script/convert.php) has a `-strip` flag to remove EXIF data from a picture, which also converts HEIC pictures to JPG for compatibility matters:
 ```bash
 convert IMG_7773.heic -strip IMG_7773.heic.jpg
 ```
@@ -181,7 +181,7 @@ for f in $(ls *.heic); convert $f -strip $f.jpg;
 
 # Additional resources
 
-Hope you enjoyed our trip trying to cleanup some footprints along the Internet! It's not an easy task, but you can do a lot about your privacy in your spare time. Here are some resources to learn more about privacy:
+Hope you enjoyed our trip trying to clean up some footprints along with the Internet! It's not an easy task, but you can do a lot about your privacy in your spare time. Here are some resources to learn more about privacy:
 
 - [r/privacy](https://www.reddit.com/r/privacy/)
 - [r/opsec](https://www.reddit.com/r/opsec/)
