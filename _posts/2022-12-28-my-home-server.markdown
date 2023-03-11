@@ -181,7 +181,7 @@ qm set 113 --hookscript local:snippets/vnc.sh
 
 **Ubuntu 12.04 (VM)**
 
-I'm a big fan of open source and car racing. One of the projects I belove is [Megasquirt](https://megasquirt.info/): An open-source hardware/software solution for EFI management on fuel injection engines. Down here the most successful product from Megasquirt is the [Megasquirt 2](http://www.megamanual.com/MSFAQ.htm): cheap, full of options, and super customizable. During the past weeks, I've been working on a wheel decoder to decode the Honda K20, K24, R18, R20, and some L15 engine trigger wheels with the Megasquirt 2. Sadly, most of the firmware development kit kept really old (As the MS2 brain is [a 1980's microprocessor](https://physics.mcmaster.ca/tech/HC908/HC908Intro.htm)) so I had to run an old Linux OS to compile the source code.
+I'm a big fan of open source and car racing. One of the projects I belove is [Megasquirt](https://megasquirt.info/): An open-source hardware/software solution for EFI management on fuel injection engines. Down here the most successful product from Megasquirt is the [Megasquirt 2](http://www.megamanual.com/MSFAQ.htm): cheap, full of options, and super customizable. During the past weeks, I've been working on a [wheel decoder to decode the Honda K20, K24, R18, R20, and some L15 engine trigger wheels with the Megasquirt 2](https://blog.nico.ninja/diy/electronics/cars/writing-a-wheel-decoder-megasquirt/). Sadly, most of the firmware development kit kept really old (As the MS2 brain is [a 1980's microprocessor](https://physics.mcmaster.ca/tech/HC908/HC908Intro.htm)) so I had to run an old Linux OS to compile the source code.
 
 [**GNS3 server**](https://www.gns3.com/)
 

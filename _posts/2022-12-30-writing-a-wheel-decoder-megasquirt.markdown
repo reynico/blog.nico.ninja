@@ -352,3 +352,5 @@ Where traces are now aligned as the engine wanted. Mati then double-checked the 
 It was really fun to mess around with the wheel decoder, it's a shame I didn't mess with it years ago and it's more shaming that we had to tear down a lot of engines to modify the trigger wheel when the problem could be solved in a couple of hours learning how the Megasquirt did the wheel decoding architecture.
 
 This also opens a very big door for other firmware modifications that we will need to extend the capabilities of our beloved Megasquirt 2. I only hope the Megasquirt developers will post the source code again for the newer releases.
+
+If you're interested in a copy of the firmware, just fire me an email!
