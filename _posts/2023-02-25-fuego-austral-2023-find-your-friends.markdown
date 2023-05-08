@@ -33,7 +33,7 @@ Dai quickly defined the art of it: a geometric form pendant, just like the jewel
 
 We designed the pendant in two parts, the biggest one holds the entire electronics and the cap hides the USB charging port and the power button. Printing time was around 30 minutes for two complete pendants.
 
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/vV_o3DaCA2o" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/vV_o3DaCA2o" frameborder="0" allowfullscreen></iframe>
 
 
 # Electronics
@@ -70,7 +70,7 @@ We choose Arduino as the framework, given its flexibility for development. The p
 
 Every second, each module transmits a small packet of around 12 bytes worth of information to the broadcast mac address: `FF:FF:FF:FF:FF:FF`, waiting on the same address for incoming packets. To avoid flooding each pendant with the same packet (a packet that comes from another single pendant, we implemented a naive checksum computation method based on the chosen colors for each pendant. That way each color is received one time, letting the microcontroller receive any other pendant during that time creating a “random” effect shown on each led.
 
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/w5z1eiUSiwU" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/w5z1eiUSiwU" frameborder="0" allowfullscreen></iframe>
 
 
 Once a color is received on a packet defined by its red, green, and blue channel PWM values, these PWM, 8-bit values are stored in the GPIO pins defined for the cathodes. Additionally, each pendant sends an inverse function speed (badly called `speed`, that it's more like `1/speed`) that delays the execution of a control loop to vary the anode's PWM value to create a nice fade-in - fade-out effect on the led.
@@ -87,7 +87,7 @@ The complete code and schematics are available in the [GitHub repository](https:
 
 Pendants were a complete success, at a first sight people didn't understand what they were seeing: ‘it's just a glowing light?’, ‘hey! where did you get those?’, ‘wow, how do you set the color?’, they went completely nuts when we told them they are Wi-Fi pendants, interconnected, that glow when some of your friends are near! Great.
 
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/ThK7DveOTnQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/ThK7DveOTnQ" frameborder="0" allowfullscreen></iframe>
 
 
 # The future
