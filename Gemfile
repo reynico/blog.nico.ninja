@@ -3,10 +3,11 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.0.0"
 
 gem "jekyll-remote-theme"
-gem "jekyll-theme-cayman"
+gem "jekyll-theme-hydeout", "~> 4.1"
 
 gem "jekyll-feed"
 gem 'jekyll-sitemap'
+gem 'jekyll-paginate'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

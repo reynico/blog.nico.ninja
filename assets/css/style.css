@@ -1,0 +1,8 @@
+#sidebar .site-title {
+	font-weight: bold !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.post-body {
+	text-align: justify;
+}
