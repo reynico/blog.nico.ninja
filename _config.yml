@@ -7,6 +7,8 @@ twitter_username: reynico
 github_username:  reynico
 permalink: /:categories/:title/
 paginate: 5
+disqus:
+  shortname: blog-nico-ninja
 
 # Build settings
 remote_theme: fongandrew/hydeout
