@@ -20,6 +20,7 @@ I recommend using a GPS-based elevation calculation application to assist in ali
 
 ![Satfinder](/assets/images/satellite-bitcoin-blockchain-1/satfinder.jpg)
 
+
 # What does the LNB do?
 The LNB (Low-Noise Block Downconverter) is a critical component in satellite communication. It amplifies the received signal with a low-noise amplifier (LNA) and performs frequency downconversion using a superheterodyne receiver circuit. This downconversion converts the microwave frequency (around 14 GHz) to a lower frequency (around 1 GHz) suitable for transmission through a coaxial cable with minimal losses. Different types of LNBs exist, but for receiving the Eutelsat 113 downlink, a conventional linear-polarized KU-band LNB is recommended.
 
@@ -43,9 +44,11 @@ For the software, [GNURadio](https://www.gnuradio.org/) is a versatile option, w
 
 ![blockstream software](/assets/images/satellite-bitcoin-blockchain-1/blockstream-software-1.jpg)
 
+
 Osmocom's [rtl_sdr](https://github.com/osmocom/rtl-sdr) serves as the backend for frontends like [Gqrx](https://gqrx.dk/) or [SDRSharp](https://airspy.com/download/), enabling the exploration of different carriers on the satellite and precise tuning to the desired carrier frequency. While not strictly necessary, Blockstream's software includes a carrier search feature. It's as simple as running the software, and it automatically scans for carriers. In my case, with the LNB I used, it found the carrier at 1425 MHz.
 
 ![satellite carrier](/assets/images/satellite-bitcoin-blockchain-1/carrier.jpg)
+
 
 # Blockchain synchronization
 Once all the components are assembled, we can start synchronizing the blockchain. It is crucial to spend time fine-tuning the antenna for optimal signal-to-noise ratio (SNR), as a stronger and more stable connection will result in better blockchain synchronization. In my experience, I initially started from the Genesis block, but it took a considerable amount of time to reach transaction 66,900 due to the low bandwidth. Therefore, I recommend presyncing your blockchain with the internet and then keeping it up to date using the satellite connection.
