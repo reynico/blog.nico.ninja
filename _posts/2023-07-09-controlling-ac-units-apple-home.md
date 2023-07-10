@@ -126,7 +126,7 @@ Here's a simple state machine diagram to understand what I did when comparing th
 
 ## Schematic
 
-This is the almost complete schematic for the controller. It's just missing the DHT22 connection that it's pretty straightforward. Both transistors are common use NPN transistors such as `2N2222`` or `BC548``.
+This is the complete schematic for the controller. Both transistors are common use NPN transistors such as `2N2222` or `BC548`. Connections on the left are hooked to the AC unit display board.
 
 ![Schematic](/assets/images/ac-homekit-1/final-schematic.png)
 
