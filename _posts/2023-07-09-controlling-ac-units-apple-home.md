@@ -121,17 +121,7 @@ The power-on signal comes from the left side of `R314` and varies between ~0.01v
 ### State machine for the power states
 Here's a simple state machine diagram to understand what I did when comparing the `powerDesiredStatus` (said by Apple Home when changing states) and what is actually happening in the AC unit, AKA `powerStatusPin`.
 
-```mermaid!
-flowchart TD
-    A[Hey Siri, heat the room] --> B[Read powerStatusPin]
-    B --> C{Compare to powerDesiredStatus}
-    C -->|False| E[setPowerToggle -> false]
-    C -->|True| D[setPowerToggle -> true]
-    E --> F[powerDesiredStatus -> true]
-    D --> G[powerDesiredStatus -> false]
-    F --> H[ac.sendCommand]
-    G --> H[ac.sendCommand]
-```
+![State machine](/assets/images/ac-homekit-1/state-machine.png)
 
 
 ## Schematic

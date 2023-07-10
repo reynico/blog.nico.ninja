@@ -9,8 +9,6 @@ gem "jekyll-feed"
 gem 'jekyll-sitemap'
 gem 'jekyll-paginate'
 
-gem 'jekyll-spaceship'
-
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
