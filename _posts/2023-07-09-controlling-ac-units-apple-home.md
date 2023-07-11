@@ -11,6 +11,8 @@ description: Learn how to integrate custom protocols, automate temperature setti
 My apartment is equipped with two air-conditioned units, and while still modern, they aren't capable of talking with Apple's HomeKit out of the box. However, with a bit of research and experimentation, I found a solution to overcome this limitation.
 
 - [Learning the remote control protocol](#learning-the-remote-control-protocol)
+  - [Bill of materials](#bill-of-materials)
+  - [Determining your remote control protocol](#determining-your-remote-control-protocol)
 - [Talking with Apple Home](#talking-with-apple-home)
   - [Errors are obscure!](#errors-are-obscure)
   - [Current room temperature reports](#current-room-temperature-reports)
@@ -19,10 +21,17 @@ My apartment is equipped with two air-conditioned units, and while still modern,
     - [Signals from the AC display board controller](#signals-from-the-ac-display-board-controller)
     - [State machine for the power states](#state-machine-for-the-power-states)
   - [Schematic](#schematic)
+  - [Bill of materials](#bill-of-materials-1)
 - [Final code](#final-code)
 
 
 # Learning the remote control protocol
+
+## Bill of materials
+* ESP8266
+* TSOP1738 or any generic IR Receiver Sensor.
+
+## Determining your remote control protocol
 
 To begin, I needed to understand the remote control protocol used by my air conditioner units. By using the [IRremoteESP8266 library](https://github.com/crankyoldgit/IRremoteESP8266) and an IR receiver like the [TSOP1738](https://www.mouser.com/ProductDetail/Vishay-Semiconductors/TSOP1738?qs=4rkkKKSASjvWmTn7s%252BwLXA%3D%3D), I was able to capture the codes emitted by the remote control and gain insights into its protocol. 
 
@@ -42,10 +51,18 @@ uint16_t rawData[343] = {9116, 4570,  602, 1730,  548, 1736,  552, 570,  574, 55
 uint8_t state[21] = {0x83, 0x06, 0x00, 0x00, 0x00, 0x00, 0x95, 0x05, 0x00, 0x00, 0x00, 0x80, 0x15, 0x05, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x02};
 ```
 
-From the serial output above, now we know that my remote control (which has a tag on the back that says `DGJ11J1-01`) operates over the `KELON168` and/or `Whirlpool` protocol which is already supported by the library: [ir_Kelon.h](https://github.com/crankyoldgit/IRremoteESP8266/blob/master/src/ir_Kelon.h)
+From the serial output above, now we know that my remote control (which has a tag on the back that says `DGJ11J1-01`) operates over the `KELON168` and/or `Whirlpool` protocol which is already supported by the library: [ir_Kelon.h](https://github.com/crankyoldgit/IRremoteESP8266/blob/master/src/ir_Kelon.h).
 
 ![Flipper Zero reading the codes](/assets/images/ac-homekit-1/flipper-read-codes.jpg)
 
+You may found that your remote controller talks a different protocol than mines. It's just a matter of digging into the library codebase and catch the correct protocol definition. Replace the header file and the invocation `IRWhirlpoolAc` below and you'll be good to go.
+
+```c
+#include <ir_Whirlpool.h>
+
+const uint16_t kIrLed = 15;  // D4
+IRWhirlpoolAc ac(kIrLed);
+```
 
 # Talking with Apple Home
 
@@ -130,6 +147,16 @@ This is the complete schematic for the controller. Both transistors are common u
 
 ![Schematic](/assets/images/ac-homekit-1/final-schematic.png)
 
+## Bill of materials
+
+| QTY | Description       | Usage                       |
+| --- | ----------------- | --------------------------- |
+| 1   | ESP8266           | Microcontroller             |
+| 2   | 2N2222            | Input switch, IR LED driver |
+| 1   | 5mm IR LED        | Communications with the AC  |
+| 1   | 10k 1/8w resistor | Current limiter             |
+| 1   | 4k7 1/8w resistor | Pull-up for the DHT22       |
+| 1   | DHT22             | Measure ambient temperature |
 
 # Final code
 
