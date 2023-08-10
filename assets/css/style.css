@@ -6,3 +6,9 @@
 .post-body {
 	text-align: justify;
 }
+
+@media (max-width: 768px) {
+	.post-body {
+		text-align: left;
+	}
+}
