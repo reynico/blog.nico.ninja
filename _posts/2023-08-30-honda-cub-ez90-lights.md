@@ -83,7 +83,7 @@ To make the turn signals blink, I need to add an LED flasher. A flasher is a sim
 
 ## Brake switches
 
-I am using small electronic green switches with a metal lever. I installed them inside the brake handle's pivot point using screws and nuts. When the brake handle is used, it moves the metal lever of the switch and activates the brake lights. The attached picture shows the installation process.
+I am using [small electronic green switches with a metal lever](https://www.adafruit.com/product/818). I installed them inside the brake handle's pivot point using screws and nuts. When the brake handle is used, it moves the metal lever of the switch and activates the brake lights. The attached picture shows the installation process.
 
 ![Brake switch](/assets/images/honda-cub-ez90-lights-1/brake-light-switch.jpg)
 
