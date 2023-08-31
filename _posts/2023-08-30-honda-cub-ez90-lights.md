@@ -89,7 +89,7 @@ I am using [small electronic green switches with a metal lever](https://www.adaf
 
 ## Rear wiring
 
-During the restoration process, the bike did not have any plastic covers, which made the wiring installation much easier. In the end, I ran six wires to the back of the bike.
+During the restoration process, the bike did not have any plastic covers, which made the wiring installation much easier. In the end, I ran six wires to the rear of the bike.
 
 - Ground
 - Left turn signal
@@ -104,7 +104,7 @@ I used a generic 6-wire plastic connector to ease the installation and maintenan
 
 ## Rear lights
 
-The LED rear light is the perfect solution for this project. It has everything needed in a single package, and its flexibility and length make it suitable for covering the holes on the back of the Cub.
+The LED rear light is the perfect solution for this project. It has everything needed in a single package, and its flexibility and length make it suitable for covering the holes on the rear of the Cub.
 
 ![Rear lights](/assets/images/honda-cub-ez90-lights-1/rear-lights.jpg)
 
