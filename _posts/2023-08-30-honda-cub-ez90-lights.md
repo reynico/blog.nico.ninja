@@ -60,7 +60,7 @@ Although the mirrors may not be aesthetically pleasing, they serve a practical p
 
 ## Light commands
 
-As I said earlier, we'll be using just one of the two light commands, which is the left one. This is the wiring pinout, whereas:
+As I said earlier, we'll be using just one of the two light commands, which is the right one (but situated on the right side). This is the wiring pinout, whereas:
 
 - Brown (6): Common for low and high beam.
 - White (7): Low beam output.
