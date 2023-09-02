@@ -6,7 +6,7 @@ categories: [linux, raspberry]
 description: I will show you how to improve your pwnagotchi unit with geolocation, real time clock and fix the AI mode
 ---
 
-[![gps working](/assets/images/pwnagotchi-1/gps-working.jpg)](/assets/images/pwnagotchi-1/gps-working.jpg)
+![gps working](/assets/images/pwnagotchi-1/gps-working.jpg)
 
 The [Pwnagotchi](https://pwnagotchi.ai/) is an "AI" that learns from the WiFi environment and instruments bettercap in order to maximize the WPA key material (any form of handshake that is crackable, including PMKIDs, full and half WPA handshakes) captured. 
 
@@ -35,7 +35,7 @@ Feed the Raspberry PI with USB power and you're good to go. Pwnagotchi will star
 ### E-Ink display
 [Pwnagotchi supports a couple of e-ink displays](https://pwnagotchi.ai/installation/#display) out of the box. Just plug into the GPIO header and see the action. In my case, my Raspberry PI Zero W didn't have the GPIO headers so I had to solder the 8 i2c interface wires directly on the board. I found a useful pinout image [here](https://community.pwnagotchi.ai/t/waveshare-v2-pinout-image/47) to do that. I've used some short wires to interconnect both GPIO interfaces.
 
-[![Waveshare v2 i2c pinout](/assets/images/pwnagotchi-1/waveshare-v2-pinout.jpeg)](/assets/images/pwnagotchi-1/waveshare-v2-pinout.jpeg)
+![Waveshare v2 i2c pinout](/assets/images/pwnagotchi-1/waveshare-v2-pinout.jpeg)
 
 Here's my current configuration on `/etc/pwnagotchi/config.toml`
 ```
@@ -63,16 +63,16 @@ I've used the cheapest, most known (by DIYers) serial GPS unit: The good ['ol U-
 I'm curious about how the new [U-Block GNSS Neo 8M units](https://www.u-blox.com/en/product/neo-m8-series) behaves. I'll write about them someday.
 
 #### Wiring the GPS unit to the Raspberry PI Zero W
-[![Raspberry PI Zero wiring to GPS unit](/assets/images/pwnagotchi-1/gps-wiring.jpg)](/assets/images/pwnagotchi-1/gps-wiring.jpg)
+![Raspberry PI Zero wiring to GPS unit](/assets/images/pwnagotchi-1/gps-wiring.jpg)
 
 I've found several different wiring ways but I'll share the one I choose and that it worked for me.
 
-| Raspberry   | GPS  | Description   |
-| ----------- |:----:| -------------:|
-| 2 (VCC 5v)  | VCC  | 5v VCC supply |
-| 6 (GND)     | GND  | Ground        |
-| 8 (GPIO14)  | RX   | GPS RX data   |
-| 10 (GPIO15) | TX   | GPS TX data   |
+| Raspberry   |  GPS  |   Description |
+| ----------- | :---: | ------------: |
+| 2 (VCC 5v)  |  VCC  | 5v VCC supply |
+| 6 (GND)     |  GND  |        Ground |
+| 8 (GPIO14)  |  RX   |   GPS RX data |
+| 10 (GPIO15) |  TX   |   GPS TX data |
 
 The `GPIO14` to GPS `RX` is completely optional and not needed at all. The GPS unit is autonomous and doesn't need any command to start working, once it's powered up you can read NMEA data from its `TX` pin.
 
@@ -135,7 +135,7 @@ sudo systemctl start gpsd.service
 ```
 At this point you should be able to query gps data by using `cgps` or any other [gpsd client](https://gpsd.gitlab.io/gpsd/client-howto.html)
 
-[![cgps](/assets/images/pwnagotchi-1/cgps-working.png)](/assets/images/pwnagotchi-1/cgps-working.png)
+![cgps](/assets/images/pwnagotchi-1/cgps-working.png)
 
 2. Now it's time to install the new gps plugin. On your computer, clone the repo and copy the `gpsd.py` file right to the home directory of your pwnagotchi
 
@@ -174,7 +174,7 @@ main.plugins.gpsd.gpsdport = 2947
 
 5. Now you're good to go with your new shiny GPS aided Pwnagotchi! Go outside and point the GPS antenna towards the sky. In a few minutes you'll see a bright red blinking light on the back of the GPS unit: That means the GPS acquired lock from satellites. The display should be now showing lat/lon/alt data:
 
-[![gps working](/assets/images/pwnagotchi-1/gps-working.jpg)](/assets/images/pwnagotchi-1/gps-working.jpg)
+![gps working](/assets/images/pwnagotchi-1/gps-working.jpg)
 
 And now the `.gps.json` files will contain not only geolocation data but also date/time from the GPS unit:
 ```

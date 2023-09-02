@@ -6,7 +6,7 @@ categories: [privacy, internet]
 description: A neverending journey on hiding our digital footprint from the Internet.
 ---
 
-[![social media harms](/assets/images/hiding-1/social-media-harms.jpg)](/assets/images/hiding-1/social-media-harms.jpg)
+![social media harms](/assets/images/hiding-1/social-media-harms.jpg)
 
 It’s been a time since I started to focus more on security, I’ve learned about threat modeling and also about privacy and I’m not talking about what your phone listens to and crafts ads for your interests but the things you (or someone else!) deliberately exposed to the Internet.
 
@@ -46,7 +46,7 @@ The very first step is to do reconnaissance and find your footprints. This inclu
 ## Email addresses
 
 Let's start with an easy one: your email address(es). Just write down in Google every email address you've used in the last 20 years, quote-enclosed, please.
-[![email results](/assets/images/hiding-1/email-results.png)](/assets/images/hiding-1/email-results.png)
+![email results](/assets/images/hiding-1/email-results.png)
 _39 results, damn._
 
 ## Usernames
@@ -55,7 +55,7 @@ If you're old school enough, you surely choose a Nickname, an identity for the I
 
 Now think about it: most of these services you consumed are publicly available. Give it a try, remember any of your old-school nicknames? Put it quote-enclosed in Google and pick search.
 
-[![nickname results](/assets/images/hiding-1/nickname-results.png)](/assets/images/hiding-1/nickname-results.png)
+![nickname results](/assets/images/hiding-1/nickname-results.png)
 _835 results, geez._
 
 ## National identity number, or ID
@@ -66,7 +66,7 @@ I found a PDF file from my university where I studied my career, funny that it's
 
 Angry enough? Someone uploaded several PDF files with tax information about a lot of people (including me!), and guess what? There's no way to contact the person who uploaded those files. We'll try to contact Scribd to take down that document in a while.
 
-[![nickname results](/assets/images/hiding-1/personal-data-scribd.png)](/assets/images/hiding-1/personal-data-scribd.png)
+![nickname results](/assets/images/hiding-1/personal-data-scribd.png)
 _Lots of PDF files with tax information. 46 pages on each document. Shit._
 
 ## Social networks
@@ -91,7 +91,7 @@ Well, it's time to put our hands down on the problem. Take this as a list of adv
 
 - Create a new email account and use a pseudonym for the handle! An email address like `john.bennet@protonmail.com` should suffice, unless you are John Bennet, right?
 - Use the `+` operator when inputting your email addresses on sites you know they'll spam you. Ex: `john.bennet+ads@protonmail.com`. That way, you could setup email filters and do actions over them, for example, mark them as read or skip the inbox immediately.
-  [![Protonmail filters](/assets/images/hiding-1/protonmail-filters.png)](/assets/images/hiding-1/protonmail-filters.png)
+  ![Protonmail filters](/assets/images/hiding-1/protonmail-filters.png)
   _Protonmail offers a simple filtering solution based on email' fields_
 - Do not set a profile picture or an email signature. Trust me, no one cares about that.
 - Do not create an email address for each service you want to register to, rather that, use the `+` operator to filter out emails later. If you want to sign up on Twitter, use `john.bennet+twitter@protonmail.com`. That way you centralize all your emails in a single account, but with easy discoverability.
@@ -107,7 +107,7 @@ This is mostly related to the [National identity number, or ID](#national-identi
 
 - Scribd has a [report infringements page](https://support.scribd.com/hc/en-us/articles/210129146) where you can ask them to delete documents that contain personal information. I've asked them to take down some documents containing my National Identity Number (among other National Identity Numbers!). It took less than 24 hours for the document to be removed. Nice.
 
-[![Scribd report](/assets/images/hiding-1/scribd-report.png)](/assets/images/hiding-1/scribd-report.png)
+![Scribd report](/assets/images/hiding-1/scribd-report.png)
 _Thank you, Delaney!_
 
 - If you happen to find some personal data on any state-owned website, you could always email them, kindly asking to remove those documents where personal data is shown.
@@ -165,7 +165,7 @@ This is a surgery-like operation as most of the forums (probably none, zero) don
 ## Multimedia
 Last but not least! It's been a time since mobile phones were built with incredible cameras on them. In a way, they seemed to be a camera with a phone! Every picture and video you take with your shiny iPhone or Android mobile phone has extra metadata attached, such as camera settings and location information with very high precision.
 
-[![Picture metadata](/assets/images/hiding-1/picture-metadata.png)](/assets/images/hiding-1/picture-metadata.png)
+![Picture metadata](/assets/images/hiding-1/picture-metadata.png)
 _Picture metadata from an iPhone_
 
 [Imagemagick's convert](https://imagemagick.org/script/convert.php) has a `-strip` flag to remove EXIF data from a picture, which also converts HEIC pictures to JPG for compatibility matters:
