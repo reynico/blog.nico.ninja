@@ -2,7 +2,7 @@
 layout: post
 title: "Synchronizing the Bitcoin blockchain with a satellite"
 date: 2023-06-15 11:00:00 -0300
-categories: [linux, diy]
+tags: [DIY, Computers, Radio]
 description: Connecting to a telecommunications satellite to download the Bitcoin blockchain using a SDR receiver and Raspberry Pi
 ---
 

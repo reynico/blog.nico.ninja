@@ -2,7 +2,7 @@
 layout: post
 title: "Pwnagotchi fixes and improvements"
 date: 2023-05-25 14:00:00 -0300
-categories: [linux, raspberry]
+tags: [Computers, Electronics, DIY]
 description: Upgrading the Battery and GPS for Enhanced Performance
 ---
 

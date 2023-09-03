@@ -2,7 +2,7 @@
 layout: post
 title: "Dyno Tuning the Golf GTI MK7.5"
 date: 2023-05-19 14:00:00 -0300
-categories: [motorsports]
+tags: [Motorsports]
 description: Enhancing Performance with Stage 1 Tune
 ---
 

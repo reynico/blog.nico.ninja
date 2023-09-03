@@ -2,7 +2,7 @@
 layout: post
 title: "Lights on the Honda Cub EZ90"
 date: 2023-08-30 11:00:00 -0300
-categories: [diy]
+tags: [DIY, Motorsports]
 description: How I installed lights on my EZ90
 ---
 

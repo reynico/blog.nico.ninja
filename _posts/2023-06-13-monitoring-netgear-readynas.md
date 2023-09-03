@@ -2,7 +2,7 @@
 layout: post
 title: "Monitoring the Netgear ReadyNAS with SNMP"
 date: 2023-06-13 17:30:00 -0300
-categories: [linux, homelab]
+tags: [Computers, Internet]
 description: Keeping My NAS in check with snmp_exporter
 ---
 

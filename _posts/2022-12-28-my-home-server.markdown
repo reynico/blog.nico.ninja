@@ -2,7 +2,7 @@
 layout: post
 title: "My home server"
 date: 2022-12-28 09:34:00 -0300
-categories: [internet, linux]
+tags: [Internet, DIY]
 description: Why do I have a home server and why you should as well
 ---
 

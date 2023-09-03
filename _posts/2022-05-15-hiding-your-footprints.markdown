@@ -2,7 +2,7 @@
 layout: post
 title: "Hiding your footprints"
 date: 2022-05-15 15:05:00 -0300
-categories: [privacy, internet]
+tags: [Security, Internet]
 description: A neverending journey on hiding our digital footprint from the Internet.
 ---
 

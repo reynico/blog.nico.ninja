@@ -2,7 +2,7 @@
 layout: post
 title:  "Gamifying the Pwnagotchi"
 date:   2021-10-31 18:55:00 +0100
-categories: [linux, raspberry]
+tags: [Computers, DIY]
 description: I will show you how to improve your pwnagotchi unit with geolocation, real time clock and fix the AI mode
 ---
 

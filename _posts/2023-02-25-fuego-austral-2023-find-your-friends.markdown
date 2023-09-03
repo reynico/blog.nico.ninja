@@ -2,7 +2,7 @@
 layout: post
 title: "Fuego Austral 2023: Find your friends"
 date: 2023-05-08 14:20:00 -0300
-categories: [diy, electronics]
+tags: [DIY, Electronics]
 description: Building shiny stuff for Fuego Austral
 ---
 

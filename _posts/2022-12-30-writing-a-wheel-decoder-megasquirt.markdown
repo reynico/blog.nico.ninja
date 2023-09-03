@@ -2,7 +2,7 @@
 layout: post
 title: "Writing a custom wheel decoder for the Megasquirt"
 date: 2022-12-31 14:20:00 -0300
-categories: [diy, electronics, cars]
+tags: [Motorsports]
 description: Learning about Megasquirt firmware internals
 ---
 

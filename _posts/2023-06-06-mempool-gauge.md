@@ -2,7 +2,7 @@
 layout: post
 title: "A Bitcoin Mempool gauge indicator"
 date: 2023-06-06 11:00:00 -0300
-categories: [diy, electronics]
+tags: [Computers, DIY, Electronics]
 description: Measuring Bitcoin's next-block fee targets
 ---
 

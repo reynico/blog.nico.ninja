@@ -2,7 +2,7 @@
 layout: post
 title: "Controlling AC Units with Apple Home and Siri"
 date: 2023-07-09 11:00:00 -0300
-categories: [electronics, diy]
+tags: [Electronics, DIY]
 description: Learn how to integrate custom protocols, automate temperature settings, and even report room temperature updates
 ---
 
