@@ -10,9 +10,26 @@ description: My notes during the upgrade of my Proxmox VE server
 
 For quite some time, [my Proxmox VE server](https://blog.nico.ninja/my-home-server/) has been running on version 7.1-10. Due to a busy year, I hadn't found the time to perform the necessary upgrades until now. In this post, I'll walk you through the steps I took to upgrade it to the latest 7.x release and then to version 8.x.
 
-# Upgrading to the Latest Proxmox VE 7.x Release
+- [Upgrading to the Latest Proxmox VE 7.x](#upgrading-to-the-latest-proxmox-ve-7x)
+  - [Configuring the repositories](#configuring-the-repositories)
+  - [Update and Dist-Upgrade](#update-and-dist-upgrade)
+  - [Stopping Virtual Machines and Containers](#stopping-virtual-machines-and-containers)
+  - [Rebooting the Proxmox Server](#rebooting-the-proxmox-server)
+  - [Checking Everything Is Working](#checking-everything-is-working)
+- [Actual Upgrade to Proxmox VE 8.x](#actual-upgrade-to-proxmox-ve-8x)
+  - [Update Base Repositories](#update-base-repositories)
+  - [Stopping Virtual Machines and Containers (Again)](#stopping-virtual-machines-and-containers-again)
+  - [Upgrading the software](#upgrading-the-software)
+  - [Changes in configuration files](#changes-in-configuration-files)
+  - [Checking the Upgrade Results Before Rebooting](#checking-the-upgrade-results-before-rebooting)
+  - [Rebooting the Server](#rebooting-the-server)
+  - [Checking That Everything Is Working](#checking-that-everything-is-working)
+    - [Monitoring](#monitoring)
+
+# Upgrading to the Latest Proxmox VE 7.x
 
 ## Configuring the repositories
+
 Initially, I was advised to add a new line to `/etc/apt/sources.list`, but I found that this repository was already included at `/etc/apt/sources.list.d/pve-no-subscription.list`.
 
 ```
@@ -20,6 +37,7 @@ deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
 ```
 
 ## Update and Dist-Upgrade
+
 Executing the following commands updated the Debian local repository and performed a dist-upgrade:
 
 ```
@@ -27,19 +45,23 @@ apt update && apt dist-upgrade
 ```
 
 ## Stopping Virtual Machines and Containers
+
 Before proceeding, I bulk-stopped both virtual machines and containers. I noticed that Proxmox rebooted faster if stopped prior to the upgrade. This was achieved through the Proxmox web UI. You just need to Right-click over your server in the Proxmox web UI and click on Bulk Stop.
 
 ![Bulk stop](/assets/images/upgrading-proxmox-7-8/bulk-stop.jpg)
 
 ## Rebooting the Proxmox Server
+
 A simple `reboot` brought the server back online.
 
 ## Checking Everything Is Working
+
 Post-reboot, logging into the Proxmox UI confirmed the successful update to version 7.4-17.
 
-
 # Actual Upgrade to Proxmox VE 8.x
+
 The upgrade process to version 8.x is straightforward. Proxmox provides an automated checker tool, `pve7to8`, which checks hardware and software configurations before initiating the upgrade.
+
 ```
 = CHECKING VERSION INFORMATION FOR PVE PACKAGES =
 
@@ -126,7 +148,9 @@ root@nuc01:~#
 ```
 
 ## Update Base Repositories
+
 To transition from Debian Bullseye to Bookworm, a simple sed replace in the APT sources list files followed by a repository update:
+
 ```
 sed -i 's/bullseye/bookworm/g' /etc/apt/sources.list
 sed -i 's/bullseye/bookworm/g' /etc/apt/sources.list.d/pve-no-subscription.list
@@ -134,30 +158,34 @@ apt update
 ```
 
 ## Stopping Virtual Machines and Containers (Again)
+
 Similar to the earlier step, a bulk stop of all machines was performed.
 
 ## Upgrading the software
 
 The software upgrade process is quite similar to the minor Proxmox VE 7.x upgrades:
+
 ```
 apt dist-upgrade
 ```
 
 ## Changes in configuration files
+
 Certain system-wide files may change during upgrades. Here's a list of files and my corresponding actions:
 
-* `/etc/issue`
-Keep your current version installed (answer No).
+- `/etc/issue`
+  Keep your current version installed (answer No).
 
-* `/etc/lvm/lvm.conf`
-Install the package maintainer's version (answer Yes).
+- `/etc/lvm/lvm.conf`
+  Install the package maintainer's version (answer Yes).
 
-* `/etc/ssh/sshd_config`
-Depending on modifications, answer No (Keep the current version installed).
-
+- `/etc/ssh/sshd_config`
+  Depending on modifications, answer No (Keep the current version installed).
 
 ## Checking the Upgrade Results Before Rebooting
+
 Using pve7to8 again revealed three warnings. One of note was related to UEFI mode, prompting the installation of grub-efi-amd64:
+
 ```
 WARN: unexpected running and installed kernel '5.15.131-1-pve'.
 WARN: systems seems to be upgraded but LXCFS is still running with FUSE 2 library, not yet rebooted?
@@ -165,17 +193,21 @@ WARN: System booted in uefi mode but grub-efi-amd64 meta-package not installed, 
 ```
 
 I don't care much about the first and second warnings, as I haven't rebooted the server yet, but I'm curious about the third one. As I actually run EFI on my hardware I'll install the missing package. You can check if you're running EFI by doing a simple
+
 ```
 ls /sys/firmware/efi
 ```
 
 If the folder exists and it's not empty, you better install `grub-efi-amd64`
+
 ```
 apt install grub-efi-amd64
 ```
 
 ## Rebooting the Server
+
 A simple reboot brought the server back to life. For those anxious moments, I monitored the return with a `ping <server_ip>`.
+
 ```
 % ping 192.168.1.2
 PING 192.168.1.2 (192.168.1.2): 56 data bytes
@@ -204,18 +236,19 @@ Request timeout for icmp_seq 34
 ```
 
 ## Checking That Everything Is Working
+
 Post-reboot, logging into the Proxmox VE web GUI confirmed the successful upgrade to version 8.x.
 
 ![Bulk stop](/assets/images/upgrading-proxmox-7-8/proxmox-ve-8-gui.jpg)
-
 
 Plex, which runs on my Proxmox server, operated as expected, signaling a complete and successful upgrade. (AKA if Plex works, everything works)
 
 ![Bulk stop](/assets/images/upgrading-proxmox-7-8/hackers-1995.jpg)
 
-
 ### Monitoring
+
 Post-upgrade, my Proxmox VE server was monitored using [prometheus-pve-exporter](https://github.com/prometheus-pve/prometheus-pve-exporter). However, it refused to function, warranting further investigation.
+
 ```
 Nov 24 22:23:16 nuc01 systemd[1]: Started prometheus-pve-exporter.service - Prometheus exporter for Proxmox VE.
 Nov 24 22:23:16 nuc01 pve_exporter[1096]: Traceback (most recent call last):
@@ -232,6 +265,7 @@ Nov 24 22:23:16 nuc01 systemd[1]: Failed to start prometheus-pve-exporter.servic
 ```
 
 Reinstalling the exporter did the trick:
+
 ```
 python3 -m pip install prometheus-pve-exporter
 pve_exporter --help
