@@ -11,7 +11,8 @@ disqus:
   shortname: blog-nico-ninja
 
 # Build settings
-remote_theme: fongandrew/hydeout
+remote_theme: poole/lanyon
+
 plugins:
   - jekyll-remote-theme
   - jekyll-feed

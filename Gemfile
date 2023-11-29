@@ -1,9 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.0.0"
+gem "jekyll", "~> 4.1.0"
 
 gem "jekyll-remote-theme"
-gem "jekyll-theme-hydeout", "~> 4.1"
 
 gem "jekyll-feed"
 gem 'jekyll-sitemap'
