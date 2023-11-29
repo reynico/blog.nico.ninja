@@ -25,7 +25,7 @@ My father has been using the ATU-100 on his projects for a while, but he complai
 
 At first, I thought that the SWR threshold could be configurable through the already-installed buttons. Turns out that that wasn't the way.
 
-Instead, you need to rewrite the https://www.microchip.com/en-us/product/pic16f1938) EEPROM in a specific memory pointer to reconfigure the ATU-100. Interesting. Luckily the [ATU-100 user's manual](https://github.com/Dfinitski/N7DDC-ATU-100-mini-and-extended-boards/blob/master/ATU_100_EXT_board/ATU_100_EXT_board_User_Manual/ENG_ATU-100_Extended_Board_User_Manual.pdf) covers the configuration in extent.
+Instead, you need to rewrite the [PIC16F1938's](https://www.microchip.com/en-us/product/pic16f1938) EEPROM in a specific memory pointer to reconfigure the ATU-100. Interesting. Luckily the [ATU-100 user's manual](https://github.com/Dfinitski/N7DDC-ATU-100-mini-and-extended-boards/blob/master/ATU_100_EXT_board/ATU_100_EXT_board_User_Manual/ENG_ATU-100_Extended_Board_User_Manual.pdf) covers the configuration in extent.
 
 > During programming of the microprocessor, in addition to writing directly to the
 control code (program), it is also proposed to record a small number of cells of the
