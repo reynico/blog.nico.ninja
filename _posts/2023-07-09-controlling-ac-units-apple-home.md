@@ -23,6 +23,8 @@ My apartment is equipped with two air-conditioned units, and while still modern,
   - [Schematic](#schematic)
   - [Bill of materials](#bill-of-materials-1)
 - [Final code](#final-code)
+- [Prometheus metrics](#prometheus-metrics)
+- [3D Printed case](#3d-printed-case)
 
 
 # Learning the remote control protocol
@@ -131,7 +133,7 @@ My air conditioner unit features a small board located behind the front lid, whi
 
 ![AC Unit display board connections](/assets/images/ac-homekit-1/ac-unit-display-board-wiring.jpg)
 
-The power-on signal comes from the left side of `R314` and varies between ~0.01v (off) and ~2.8v (on), enough to trigger an NPN transistor and put down its collector.
+The power-on signal comes from the left side of `R314` and varies between ~0.01v (off) and ~2.8v (on), enough to trigger the ESP8266 input.
 
 ![AC Unit display board wiring](/assets/images/ac-homekit-1/ac-unit-board-wired-detail.jpg)
 
@@ -143,7 +145,7 @@ Here's a simple state machine diagram to understand what I did when comparing th
 
 ## Schematic
 
-This is the complete schematic for the controller. Both transistors are common use NPN transistors such as `2N2222` or `BC548`. Connections on the left are hooked to the AC unit display board.
+This is the complete schematic for the controller. The transistor is of common use NPN transistors such as `2N2222` or `BC548`. Connections on the left are hooked to the AC unit display board.
 
 ![Schematic](/assets/images/ac-homekit-1/final-schematic.png)
 
@@ -152,7 +154,7 @@ This is the complete schematic for the controller. Both transistors are common u
 | QTY | Description       | Usage                       |
 | --- | ----------------- | --------------------------- |
 | 1   | ESP8266           | Microcontroller             |
-| 2   | 2N2222            | Input switch, IR LED driver |
+| 1   | 2N2222            | IR LED driver               |
 | 1   | 5mm IR LED        | Communications with the AC  |
 | 1   | 10k 1/8w resistor | Current limiter             |
 | 1   | 4k7 1/8w resistor | Pull-up for the DHT22       |
@@ -165,3 +167,41 @@ To implement my solution, I forked Josh's repository, as it already contained mo
 By following these steps and integrating the various components, I successfully achieved control over my air conditioner unit using Apple HomeKit. Now, I can simply ask Siri to adjust the climate through voice commands, providing a convenient and seamless experience.
 
 Feel free to explore the complete code and implementation details in my forked repository: [ac-homekit-esp8266](https://github.com/reynico/ac-homekit-esp8266)
+
+# Prometheus metrics
+
+> This section has been added on 18 Dec, 2023.
+
+![Grafana panel](/assets/images/ac-homekit-1/grafana-panel.jpg)
+
+
+I've been curious about the timelapse of temperature, humidity and AC status so I've added an exporter to [Prometheus Pushgateway](https://github.com/prometheus/pushgateway). This way, I don't need to reconfigure my Prometheus server each time a new device is added, nor I need to keep track of IP addresses.
+
+The metrics section exports:
+* Temperature, in degrees C.
+* Humidity/Moisture, in %.
+* AC Unit status (on/off).
+* AC Unit mode (off, heat, cool, automatic). These modes are described as integers, where:
+  * 0: AC unit is off.
+  * 1: AC unit is in cool mode.
+  * 2: AC unit is in heat mode.
+  * 3: AC unit is auto mode.
+
+# 3D Printed case
+
+> This section has been added on 18 Dec, 2023.
+
+![3D Printed case](/assets/images/ac-homekit-1/box-installed.jpg)
+
+In the repo you'll find the STL files for the 3D printed case. I built this case to keep things tidy and to avoid hitting the board or the sensor with something, maybe causing irremediable damage to the components.
+
+![3D Printed case](/assets/images/ac-homekit-1/box-components.jpg)
+
+I opted to run a Wemos D1 controller, it's smaller and cheaper than the previous board, a Firebeetle ESP8266.
+
+![3D Printed case](/assets/images/ac-homekit-1/box-inside.jpg)
+
+The components are hot-glued to the case, and the DHT22 sensor is exposed through a small window. There's also a hole for the reset button.
+
+![3D Printed case](/assets/images/ac-homekit-1/dht-sensor.jpg)
+
