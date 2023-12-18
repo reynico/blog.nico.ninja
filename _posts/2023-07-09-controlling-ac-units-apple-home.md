@@ -185,7 +185,7 @@ The metrics section exports:
   * 0: AC unit is off.
   * 1: AC unit is in cool mode.
   * 2: AC unit is in heat mode.
-  * 3: AC unit is auto mode.
+  * 4: AC unit is auto mode.
 
 # 3D Printed case
 
