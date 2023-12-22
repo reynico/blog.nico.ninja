@@ -10,9 +10,9 @@ title: Home
     <ul class="post-list">
       {% for post in paginator.posts %}
       <li>
-        <h2>
+        <h1>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        </h1>
         <section class="post-excerpt" itemprop="description">
           <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
         </section>
