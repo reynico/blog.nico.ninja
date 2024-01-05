@@ -55,7 +55,7 @@ html {
 
 @media (min-width: 38em) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -134,7 +134,6 @@ ul,
 ol,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
 }
 
 dt {
@@ -185,12 +184,10 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: .75rem;
   line-height: 1.4;
+  overflow-x: auto;
   white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
   background-color: #f9f9f9;
 }
 
@@ -239,21 +236,16 @@ pre code {
 
 /* Quotes */
 blockquote {
-  padding: .5rem 1rem;
+  padding: .5rem .5rem;
   margin: .8rem 0;
   color: #7a7a7a;
   border-left: .25rem solid #e5e5e5;
+  font-size: .8rem;
+  font-style: italic;
 }
 
 blockquote p:last-child {
   margin-bottom: 0;
-}
-
-@media (min-width: 30em) {
-  blockquote {
-    padding-right: 5rem;
-    padding-left: 1.25rem;
-  }
 }
 
 img {
