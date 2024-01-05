@@ -361,6 +361,7 @@ tbody tr:nth-child(odd) th {
 
 .post-list {
   list-style: none;
+  padding-inline-start: 0px;
 }
 
 /* Blog post or page title */
