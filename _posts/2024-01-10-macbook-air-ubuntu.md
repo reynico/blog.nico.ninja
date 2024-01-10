@@ -77,6 +77,10 @@ As I said earlier, I have never been able to reach the declared 7-hour of web br
 
 ![Power Statistics panel](/assets/images/macbook-air-ubuntu-1/battery.png)
 
+I found that some of the power manager default behaviours were a bit misleading, at least for a laptop: I had to reconfigure the laptop lid behaviour from "Lock screen"  to "Suspend", and then adjust the critical power section to ask me what to do if I'm running below the threhsold.
+
+![Power Manager Settings](/assets/images/macbook-air-ubuntu-1/power-manager-settings.png)
+
 
 
 # Thoughts
