@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Raspberry Pi UniFi Controller Mastery"
-date: 2024-01-30 18:10:00 -0300
+date: 2024-01-30 17:30:00 -0300
 tags: [Computers, Networking]
 description: Things I wish I had known before installing the Unifi Controller in a Raspberry PI
 ---
@@ -29,7 +29,7 @@ So running a local server sounds like the best trade-off for us, since we haven'
 - [MongoDB is fragile](#mongodb-is-fragile)
 - [Don't try to start the mongod.service](#dont-try-to-start-the-mongodservice)
 - [Disk writes are heavy](#disk-writes-are-heavy)
-  - [logrotate to the rescue](#logrotate-to-the-rescue)
+	- [logrotate to the rescue](#logrotate-to-the-rescue)
 - [Memory pressure is heavy](#memory-pressure-is-heavy)
 - [Conclusion](#conclusion)
 
