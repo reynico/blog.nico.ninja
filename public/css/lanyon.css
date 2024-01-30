@@ -590,3 +590,42 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked~.sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0, 0, 0, .1);
 }
+
+#search-container {
+  padding-top: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #181818;
+    color: #c0c0c0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .post-title {
+    color: #9a9a9a;
+  }
+
+  .masthead {
+    border-bottom-color: #313131;
+  }
+
+  .sidebar-toggle {
+    background-color: #181818;
+  }
+
+  .highlight pre,
+  code {
+    background-color: #313131;
+  }
+
+  tbody tr:nth-child(odd) td,
+  tbody tr:nth-child(odd) th {
+    background-color: #323232;
+  }
+}
