@@ -20,5 +20,20 @@
       -}}</a>
     {%- endfor -%}
 
+    <div class="sidebar-nav-item" id="search-container">
+      <input type="search" name="search" id="search-input" placeholder="Search something">
+      <ul id="results-container"></ul>
+    </div>
   </nav>
 </div>
+<script src="/public/js/search.js" type="text/javascript"></script>
+
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    searchResultTemplate: '<a href="{url}" tabindex="1"><p>{title}</p></a>',
+    noResultsText: '<p>No results found!</p>',
+    json: '/search.json'
+  })
+</script>
