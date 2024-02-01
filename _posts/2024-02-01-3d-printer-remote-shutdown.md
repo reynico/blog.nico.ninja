@@ -6,7 +6,7 @@ tags: [Electronics, DIY]
 description: Powering down the 3d printer before bad things goes on
 ---
 
-I've recently installed an IP camera to monitor my long-standing prints to check how it is going during the day when I am not at home. It took me not much time to realize that whether the printing process goes well or not, I cannot control the printer from any remote location.
+I've recently installed an IP camera to monitor my long-standing prints and check how it is going during the day when I am not at home. It took me not much time to realize that whether the printing process goes well or not, I cannot control the printer from any remote location.
 
 ![Camera](/assets/images/3dprinter-remote-shutdown-1/camera-screenshot.jpg)
 
@@ -193,7 +193,7 @@ Once started, the rendered webpage will look like this
 
 # Schematic
 
-The electronics side of the project involved a [HW-307](https://thinkrobotics.com/products/1-channel-relay-module-shield-5v) relay board, that only works well with 5v; Since the onboard transistor is a PNP transistor, driven with the 3.3v ESP01 board there isn't enough voltage at the transistor base to trigger down the relay. The result is that the relay is always on.
+The electronics side of the project involved a [HW-307](https://thinkrobotics.com/products/1-channel-relay-module-shield-5v) relay board, that only works well with 5v; Since the onboard transistor is a PNP transistor, while driven with the 3.3v ESP01 board there isn't enough voltage at the transistor base to trigger down the relay. The result is that the relay is always on.
 
 [![Schematic](/assets/images/3dprinter-remote-shutdown-1/ender3power_schem.png)](/assets/images/3dprinter-remote-shutdown-1/ender3power_schem.png)
 
@@ -202,7 +202,7 @@ Again, since I didn't want to spend money on this project, I decided to add a BC
 ![Assembly](/assets/images/3dprinter-remote-shutdown-1/assembly.jpg)
 
 
-I tore down an old 5V power supply that I'm not sure what belonged to, but it also provided the C14 inlet connector (AKA Interlock) for the project. This is enough to drive the relay board, but too much for the little ESP01: The board needs a 3.3V power supply. Turns out that I had a burnt [Wemos D1 board](https://www.wemos.cc/en/latest/_static/files/sch_d1_mini_v3.0.0.pdf) lying around the drawer so I took the [ME6211 LDO regulator](https://datasheet.lcsc.com/lcsc/Nanjing-Micro-One-Elec-ME6211C33M5G-N_C82942.pdf), perfect to convert that nasty 5V to a nice 3.3V line.
+I tore down an old 5V power supply that I'm not sure what belonged to, and I found a C14 inlet connector (AKA Interlock) also lying there. This is enough to drive the relay board, but too much for the little ESP01: The board needs a 3.3V power supply. Turns out that I had a burnt [Wemos D1 board](https://www.wemos.cc/en/latest/_static/files/sch_d1_mini_v3.0.0.pdf) in the drawer so I took the [ME6211 LDO regulator](https://datasheet.lcsc.com/lcsc/Nanjing-Micro-One-Elec-ME6211C33M5G-N_C82942.pdf) from it, perfect to convert that nasty 5V to a nice 3.3V line and feed the ESP01.
 
 ![Assembly](/assets/images/3dprinter-remote-shutdown-1/assembled-no-lid.jpg)
 
