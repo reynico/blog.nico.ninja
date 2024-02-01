@@ -1,5 +1,6 @@
 #!/bin/bash
 
+status_code=0
 IMAGE_EXTENSIONS=("jpg" "jpeg" "png" "heic")
 
 has_exif_data() {
@@ -19,8 +20,9 @@ for file in $(git diff --cached --name-only --diff-filter=ACM); do
         if has_exif_data "$file"; then
             echo "Warning: Image '$file' has EXIF data. Removing data..."
             remove_metadata "$file"
+            status_code=1
         fi
     fi
 done
 
-exit 0
+exit $status_code
