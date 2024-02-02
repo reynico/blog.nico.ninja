@@ -152,7 +152,8 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   pinMode(output, OUTPUT);
-  digitalWrite(output, isOutputInverted ? HIGH : LOW);
+  digitalWrite(output, isOutputInverted ? LOW : HIGH);
+  isOutputOn = true;
 
   // Send web page to client
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
