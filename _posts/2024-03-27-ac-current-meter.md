@@ -25,6 +25,7 @@ Things to take into account:
 - [3D printed case](#3d-printed-case)
 - [Bill of Materials](#bill-of-materials)
 - [Pictures](#pictures)
+- [Video showoff](#video-showoff)
 - [Files and Resources](#files-and-resources)
 
 
@@ -126,6 +127,10 @@ The AC power meter hooked to the power distribution
 And with the lid closed
 ![Lid closed](/assets/images/ac-current-meter-1/power-hooked-lid-closed.jpg)
 
+# Video showoff
+A quick video on how values are displayed
+
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/3dFRwNVLIOI" frameborder="0" allowfullscreen></iframe>
 
 # Files and Resources
 
