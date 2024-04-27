@@ -631,6 +631,12 @@ a.pagination-item:hover {
   }
 }
 
+#results-container {
+  position: relative;
+  z-index: 3;
+  background-color: #202020;
+}
+
 #results-container p {
   text-align: left;
 }
