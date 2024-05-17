@@ -17,12 +17,14 @@ In this post, I want to talk about the [resident or discoverable mode](https://d
 - [Requirements](#requirements)
 - [Generating the key](#generating-the-key)
 - [Adding the new key](#adding-the-new-key)
+- [But the private key is on my computer anyway!](#but-the-private-key-is-on-my-computer-anyway)
+- [Have you lost the private key?](#have-you-lost-the-private-key)
 - [Managing your keys with ykman](#managing-your-keys-with-ykman)
 
 
 # Understanding the counter effects
 
-Depending on your threat model, you may prefer to use the non-resident or non-discoverable mode, where the Yubikey doesn't hold the private key; thus, if the Yubikey gets lost or stolen, an attacker could export the private key from it if it is not appropriately secured. While this does not make me happy, I prefer to take that risk and keep my private key available across computers.
+Depending on your threat model, you may prefer to use the non-resident or non-discoverable mode, where the Yubikey doesn't use the Yubikey's master key; thus, if the Yubikey gets lost or stolen, an attacker could export the private key from it if it is not appropriately secured. While this does not make me happy, I prefer to take that risk and keep my private key available across computers.
 
 
 # Requirements
@@ -94,6 +96,21 @@ Welcome to Ubuntu 22.04 LTS (GNU/Linux 6.5.11-4-pve x86_64)
 Last login: Sun May 12 20:55:24 2024 from 192.168.1.251
 nico@bastion:~$
 ```
+
+
+# But the private key is on my computer anyway!
+
+Yes, and no.
+
+The SSH private key never leaves the Yubikey. The fact that non-resident keys are stored encrypted outside the Yubikey is an implementation detail that does not change the security characteristics, as the Yubikey never reveals the wrapping key.
+
+Read more at [Key Generation](https://developers.yubico.com/U2F/Protocol_details/Key_generation.html).
+
+
+# Have you lost the private key?
+
+If you happen to reinstall your computer, delete the private key, or just need to SSH from another system, export the private key from the Yubikey with `ssh-keygen -K`
+
 
 # Managing your keys with ykman
 These are some useful commands to check and delete your keys if needed.
