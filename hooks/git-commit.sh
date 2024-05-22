@@ -5,7 +5,27 @@ IMAGE_EXTENSIONS=("jpg" "jpeg" "png" "heic")
 
 has_exif_data() {
     local image_path="$1"
-    exiftool "$image_path" &> /dev/null
+    exiftool "$image_path" | grep -Ev \
+        '^(ExifTool Version Number|'\
+        'File Name|'\
+        'Directory|'\
+        'File Size|'\
+        'File Modification Date/Time|'\
+        'File Access Date/Time|'\
+        'File Inode Change Date/Time|'\
+        'File Permissions|'\
+        'File Type|'\
+        'File Type Extension|'\
+        'MIME Type|'\
+        'Image Width|'\
+        'Image Height|'\
+        'Encoding Process|'\
+        'Bits Per Sample|'\
+        'Color Components|'\
+        'Y Cb Cr Sub Sampling|'\
+        'Image Size|'\
+        'Megapixels)' \
+        &> /dev/null
 }
 
 remove_metadata() {
