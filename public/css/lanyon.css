@@ -629,6 +629,10 @@ a.pagination-item:hover {
   tbody tr:nth-child(odd) th {
     background-color: #323232;
   }
+
+  strong {
+    color: #ffffff;
+  }
 }
 
 #results-container {
