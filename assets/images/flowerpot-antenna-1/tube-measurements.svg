@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <!-- Light background -->
+  <rect x="0" y="0" width="800" height="200" fill="#F5F5F5"/>
+  
+  <!-- Main tube body - light gray to represent PVC -->
+  <rect x="50" y="75" width="700" height="50" fill="#E0E0E0" stroke="#B0B0B0" stroke-width="2"/>
+  
+  <!-- Holes - 8mm diameter -->
+  <!-- At 95cm -->
+  <circle cx="495" cy="100" r="4" fill="#FFFFFF" stroke="#B0B0B0" stroke-width="2"/>
+  <!-- At 100cm -->
+  <circle cx="520" cy="100" r="4" fill="#FFFFFF" stroke="#B0B0B0" stroke-width="2"/>
+  
+  <!-- Tube diameter indicator -->
+  <path d="M30 75 L30 125" stroke="#404040" stroke-width="1"/>
+  <path d="M25 75 L35 75" stroke="#404040" stroke-width="1"/>
+  <path d="M25 125 L35 125" stroke="#404040" stroke-width="1"/>
+  <text x="5" y="105" font-family="Arial" font-size="12" fill="#404040">25mm</text>
+  
+  <!-- Hole diameter indicator -->
+  <text x="460" y="85" font-family="Arial" font-size="10" fill="#404040">8mm</text>
+  
+  <!-- Total length measurement -->
+  <path d="M50 150 L750 150" stroke="#404040" stroke-width="1"/>
+  <path d="M50 145 L50 155" stroke="#404040" stroke-width="1"/>
+  <path d="M750 145 L750 155" stroke="#404040" stroke-width="1"/>
+  <text x="350" y="170" font-family="Arial" font-size="14" fill="#404040">1.5m total length</text>
+  
+  <!-- Hole measurements -->
+  <path d="M50 50 L495 50" stroke="#404040" stroke-width="1"/>
+  <path d="M50 45 L50 55" stroke="#404040" stroke-width="1"/>
+  <path d="M495 45 L495 55" stroke="#404040" stroke-width="1"/>
+  <text x="250" y="45" font-family="Arial" font-size="14" fill="#404040">95cm</text>
+  
+  <path d="M50 30 L520 30" stroke="#404040" stroke-width="1"/>
+  <path d="M50 25 L50 35" stroke="#404040" stroke-width="1"/>
+  <path d="M520 25 L520 35" stroke="#404040" stroke-width="1"/>
+  <text x="260" y="25" font-family="Arial" font-size="14" fill="#404040">100cm</text>
+</svg>

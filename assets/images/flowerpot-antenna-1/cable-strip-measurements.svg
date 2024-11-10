@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <!-- Light background -->
+  <rect x="0" y="0" width="800" height="200" fill="#F5F5F5"/>
+  
+  <!-- Main cable body -->
+  <path d="M50 100 L750 100" stroke="#404040" stroke-width="8" fill="none"/>
+  
+  <!-- Exposed inner section (different color) -->
+  <path d="M50 100 L525 100" stroke="#A0A0A0" stroke-width="4" fill="none"/>
+  
+  <!-- Zip tie at 90.5cm -->
+  <path d="M680 80 L680 120 L690 120 L690 80 Z" fill="#505050"/>
+  
+  <!-- Measurement lines and text -->
+  <!-- 47.5cm measurement -->
+  <path d="M50 130 L525 130" stroke="#404040" stroke-width="1" fill="none"/>
+  <path d="M50 125 L50 135" stroke="#404040" stroke-width="1"/>
+  <path d="M525 125 L525 135" stroke="#404040" stroke-width="1"/>
+  <text x="270" y="150" font-family="Arial" font-size="14" fill="#404040">47.5cm (stripped)</text>
+  
+  <!-- 90.5cm measurement -->
+  <path d="M50 70 L680 70" stroke="#404040" stroke-width="1" fill="none"/>
+  <path d="M50 65 L50 75" stroke="#404040" stroke-width="1"/>
+  <path d="M680 65 L680 75" stroke="#404040" stroke-width="1"/>
+  <text x="350" y="60" font-family="Arial" font-size="14" fill="#404040">90.5cm (zip tie)</text>
+  
+  <!-- Start point indicator -->
+  <text x="30" y="95" font-family="Arial" font-size="14" fill="#404040">0</text>
+</svg>
