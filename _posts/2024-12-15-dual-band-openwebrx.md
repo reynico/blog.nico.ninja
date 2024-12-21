@@ -26,15 +26,15 @@ I think it is a great tool for people testing their equipment and also a good al
 My journey with Software Defined Radio started 13 years ago, messing around with the blueish plastic case DVB-T SDR receivers, and I never stopped to play with them. I usually work with my father, LU3DJ, bringing up new WebSDR receivers around Argentina. We think it is a great way to bring people closer to the radio, covering different areas of the globe.
 
 ![LU8FCJ SDR](/assets/images/openwebrx-1/lu8fcj_sdr.jpg)
-
+> LU8FCJ's WebSDR internals, [http://el22.dyndns-blog.com:8080/](http://el22.dyndns-blog.com:8080/)
 
 # Software
 
-Since 2011, we have built our very first Internet-enabled SDR receiver. Many things have changed, and I decided to run mine with OpenWebRX Plus on a Ubuntu virtual machine in my Home Server with Proxmox.
+Since 2011, we have built our very first Internet-enabled SDR receiver. Many things have changed, and I decided to run mine with [OpenWebRX Plus](https://github.com/0xAF/openwebrxplus) on a Ubuntu virtual machine in my [Home Server with Proxmox](https://blog.nico.ninja/my-home-server/).
 
 ## Install
 
-Installation is easy. You can follow the official instructions [here](https://luarvique.github.io/ppa/#if-you-are-an-ubuntu-2204-user-). Once you run these commands, you will get your OpenWebRX+ available at http://localhost:8073/
+Installation is easy. You can follow the official instructions [here](https://luarvique.github.io/ppa/#if-you-are-an-ubuntu-2204-user-). Once you run these commands, you will get your OpenWebRX+ available at [http://localhost:8073/](http://localhost:8073/)
 
 ```bash
 curl -s https://luarvique.github.io/ppa/openwebrx-plus.gpg | sudo gpg --yes --dearmor -o /etc/apt/trusted.gpg.d/openwebrx-plus.gpg
@@ -45,7 +45,7 @@ sudo apt install openwebrx
 
 ## Configuration
 
-Configuration can be done manually via the web interface at http://localhost:8073/settings, or through the JSON files stored in `/var/lib/openwebrx/`. I will only share the SDR settings section of the `settings.json` file:
+Configuration can be done manually via the web interface at [http://localhost:8073/settings](http://localhost:8073/settings), or through the JSON files stored in `/var/lib/openwebrx/`. I will only share the SDR settings section of the `settings.json` file:
 
 ```json
 "sdrs": {
