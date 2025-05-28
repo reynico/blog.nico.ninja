@@ -25,6 +25,7 @@ The FOMO about AI caught me. While I use Chat GPT and Claude for some of my dail
   - [Iteration #13: Refining the embeddings (part 3)](#iteration-13-refining-the-embeddings-part-3)
   - [Iteration #14: External embedding models (part 2)](#iteration-14-external-embedding-models-part-2)
   - [Iteration #15: The dish replacement bug](#iteration-15-the-dish-replacement-bug)
+  - [Iteration #16: Scored dishes](#iteration-16-scored-dishes)
 - [Conclusion](#conclusion)
 
 
@@ -434,6 +435,61 @@ Amazing. This bad boy was mega consistent about the meal's base ingredient: pork
 ![Improving the dish replacement](/assets/files/ai-weekly-meals-planner-1/image%204.png)
 
 Once I instructed the agent to offer a completely different meal, it started to behave better.
+
+## Iteration #16: Scored dishes
+
+> This iteration was added on May 28th, 2025.
+
+Until now, the menus were generated based on strict and fixed prompts. We indeed used already-generated menus in the past to feed and improve the prompts, but they were not that good.
+
+Having scored dishes would be better, so I added a one-to-five rating with stars for each menu. Now you can generate a menu, replace dishes, and then score it.
+
+![Star scores](/assets/files/ai-weekly-meals-planner-1/scores.png)
+
+The rated dishes can be used later to feed the prompts for new menus:
+
+```python
+def get_highly_rated_dishes(limit=5):
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT m.menu_text
+            FROM menus m
+            JOIN menu_ratings r ON m.id = r.menu_id
+            WHERE r.rating >= 4
+            ORDER BY r.created_at DESC
+            LIMIT ?
+        """, (limit * 3,))
+
+        results = cursor.fetchall()
+        all_dishes = []
+
+        for row in results:
+            menu_text = row[0]
+            dishes = extract_dishes_from_menu(menu_text)
+            all_dishes.extend(dishes)
+
+        if all_dishes:
+            random.shuffle(all_dishes)
+            return all_dishes[:limit]
+        return []
+```
+
+Ratings are then converted to bonus points:
+
+```python
+if chunk_hash in menu_ratings:
+	rating = menu_ratings[chunk_hash]
+	# Convert scale from 1-5 to a bonus: -0.2 to +0.2
+	rating_bonus = (rating - 3) * 0.1
+	logger.info(f"Found exact rating {rating} for chunk, applying bonus {rating_bonus}")
+```
+
+Now, highly rated dishes are used as dish suggestions in the menu generator method
+
+![Menu generator using scores](/assets/files/ai-weekly-meals-planner-1/menu-generator-ratings.png)
+
+I am really happy with this inclusion, not only because the menus are way better than before, but also because I now have a more enriched database to play with.
 
 # Conclusion
 
