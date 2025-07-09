@@ -30,3 +30,8 @@ After a few tests to ensure everything was working as expected, I attempted to i
 This little project turned out way better than expected. I didn't manage to improve the filter, as it turns out the LNA4ALL guys knew what they were doing from the start. However, I now have a simple RF sweeper that works quite well for basic measurements. Sometimes, the tools you build yourself end up being more useful than the original project for which you built them. Also, I learned a lot during this journey.
 
 Check [my repository at GitHub](https://github.com/reynico/rf-response-sweep) for more information, code, and example measurements.
+
+
+Ah, oh, I almost forgot! Yes, the OpenwebRX+ receiver now has a lower noise level, and stations emboss a bit more, you can compare it with the [initial setup I made in December](https://blog.nico.ninja/dual-band-openwebrx/):
+
+![Current noise level and signals](../assets/images/band-stop-filter-1/openwebrx_filtered.png)
