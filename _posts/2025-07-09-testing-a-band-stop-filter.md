@@ -31,7 +31,6 @@ This little project turned out way better than expected. I didn't manage to impr
 
 Check [my repository at GitHub](https://github.com/reynico/rf-response-sweep) for more information, code, and example measurements.
 
-
-Ah, oh, I almost forgot! Yes, the OpenwebRX+ receiver now has a lower noise level, and stations emboss a bit more, you can compare it with the [initial setup I made in December](https://blog.nico.ninja/dual-band-openwebrx/):
+Ah, oh, I almost forgot! Yes, the [OpenwebRX+ receiver](https://sdr.nico.ninja:8443/) now has a lower noise level, and stations emboss a bit more, you can compare it with the [initial setup I made in December](https://blog.nico.ninja/dual-band-openwebrx/):
 
 ![Current noise level and signals](../assets/images/band-stop-filter-1/openwebrx_filtered.png)
