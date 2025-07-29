@@ -13,31 +13,40 @@
  * https://github.com/poole/lanyon.
  */
 
+/* Root variables for themes */
+:root {
+  --bg-color: #fff;
+  --text-color: #515151;
+  --heading-color: #313131;
+  --border-color: #eee;
+  --sidebar-bg: #202020;
+  --sidebar-text: rgba(255, 255, 255, .6);
+  --code-bg: #f9f9f9;
+  --table-stripe: #f9f9f9;
+  --toggle-bg: #fff;
+  --toggle-color: #505050;
+}
 
-/*
- * Contents
- *
- * Global resets
- * Masthead
- * Sidebar
- * Slide effect
- * Posts and pages
- * Pagination
- * Reverse layout
- * Themes
- */
+[data-theme="dark"] {
+  --bg-color: #181818;
+  --text-color: #c0c0c0;
+  --heading-color: #9a9a9a;
+  --border-color: #313131;
+  --sidebar-bg: #202020;
+  --sidebar-text: rgba(255, 255, 255, .6);
+  --code-bg: #313131;
+  --table-stripe: #323232;
+  --toggle-bg: #181818;
+  --toggle-color: #c0c0c0;
+}
 
-
-/*
- * Global resets
- *
- * Update the foundational and global aspects of the page.
- */
-
-/* Prevent scroll on narrow devices */
+/* Global resets */
 html,
 body {
   overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -47,31 +56,50 @@ h4,
 h5,
 h6 {
   font-weight: 600;
-  color: #313131;
+  color: var(--heading-color);
   letter-spacing: -.025rem;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 0.8rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--toggle-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-/*
- * Wrapper
- *
- * The wrapper is used to position site content when the sidebar is toggled. We
- * use an outter wrap to position the sidebar without interferring with the
- * regular page content.
- */
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
+.theme-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(20deg);
+}
+
+/* Wrapper */
 .wrap {
   position: relative;
   width: 100%;
 }
 
-
-/*
- * Container
- *
- * Center the page content.
- */
-
+/* Container */
 .container {
   max-width: 28rem;
 }
@@ -88,18 +116,12 @@ h6 {
   }
 }
 
-
-/*
- * Masthead
- *
- * Super small header above the content for site name and short description.
- */
-
+/* Masthead */
 .masthead {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .masthead-title {
@@ -129,23 +151,7 @@ h6 {
   }
 }
 
-
-/*
- * Sidebar
- *
- * The sidebar is the drawer, the item we are toggling with our handy hamburger
- * button in the corner of the page.
- *
- * This particular sidebar implementation was inspired by Chris Coyier's
- * "Offcanvas Menu with CSS Target" article, and the checkbox variation from the
- * comments by a reader. It modifies both implementations to continue using the
- * checkbox (no change in URL means no polluted browser history), but this uses
- * `position` for the menu to avoid some potential content reflow issues.
- *
- * Source: http://css-tricks.com/off-canvas-menu-with-css-target/#comment-207504
- */
-
-/* Style and "hide" the sidebar */
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -155,9 +161,8 @@ h6 {
   visibility: hidden;
   overflow-y: auto;
   font-size: .875rem;
-  /* 15px */
-  color: rgba(255, 255, 255, .6);
-  background-color: #202020;
+  color: var(--sidebar-text);
+  background-color: var(--sidebar-bg);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
@@ -165,11 +170,9 @@ h6 {
 @media (min-width: 30em) {
   .sidebar {
     font-size: .75rem;
-    /* 14px */
   }
 }
 
-/* Sidebar content */
 .sidebar a {
   font-weight: normal;
   color: #fff;
@@ -183,7 +186,6 @@ h6 {
   margin-bottom: 0;
 }
 
-/* Sidebar nav */
 .sidebar-nav {
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
@@ -214,7 +216,6 @@ a.sidebar-nav-item:focus {
   }
 }
 
-/* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
   position: absolute;
   opacity: 0;
@@ -223,7 +224,6 @@ a.sidebar-nav-item:focus {
   user-select: none;
 }
 
-/* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
   top: .8rem;
@@ -231,8 +231,8 @@ a.sidebar-nav-item:focus {
   display: flex;
   align-items: center;
   padding: .25rem .75rem;
-  color: #505050;
-  background-color: #fff;
+  color: var(--toggle-color);
+  background-color: var(--toggle-bg);
   border-radius: .25rem;
   cursor: pointer;
 }
@@ -270,19 +270,7 @@ a.sidebar-nav-item:focus {
   }
 }
 
-/* Slide effect
- *
- * Handle the sliding effects of the sidebar and content in one spot, seperate
- * from the default styles.
- *
- * As an a heads up, we don't use `transform: translate3d()` here because when
- * mixed with `position: fixed;` for the sidebar toggle, it creates a new
- * containing block. Put simply, the fixed sidebar toggle behaves like
- * `position: absolute;` when transformed.
- *
- * Read more about it at http://meyerweb.com/eric/thoughts/2011/09/12/.
- */
-
+/* Slide effect */
 .wrap,
 .sidebar,
 .sidebar-toggle {
@@ -310,24 +298,16 @@ a.sidebar-nav-item:focus {
   transform: translateX(14rem);
 }
 
-
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
-
+/* Posts and pages */
 .page,
 .post {
   margin-bottom: 4em;
 }
 
-/* Blog post or page title */
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  color: var(--heading-color);
 }
 
 .page-title,
@@ -335,17 +315,15 @@ a.sidebar-nav-item:focus {
   margin-top: 0;
 }
 
-/* Meta data line below post title */
 .post-date {
   display: block;
   color: #9a9a9a;
 }
 
-/* Related posts */
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
 }
 
 .related-posts {
@@ -371,37 +349,27 @@ a.sidebar-nav-item:focus {
   color: inherit;
 }
 
-
-/*
- * Pagination
- *
- * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
- * there are no more previous or next posts to show.
- */
-
+/* Pagination */
 .pagination {
   overflow: hidden;
-  /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
   color: #ccc;
   text-align: center;
 }
 
-/* Pagination items can be `span`s or `a`s */
 .pagination-item {
   display: block;
   padding: 1rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
 }
 
 .pagination-item:first-child {
   margin-bottom: -1px;
 }
 
-/* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
-  background-color: #f5f5f5;
+  background-color: var(--code-bg);
 }
 
 @media (min-width: 30em) {
@@ -427,14 +395,7 @@ a.pagination-item:hover {
   }
 }
 
-
-/*
- * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` and sidebar toggle
- * on the right side.
- */
-
+/* Reverse layout */
 .layout-reverse .sidebar {
   left: auto;
   right: -14rem;
@@ -453,15 +414,7 @@ a.pagination-item:hover {
   transform: translateX(-14rem);
 }
 
-
-/*
- * Themes
- *
- * Apply custom color schemes by adding the appropriate class to the `body`.
- * Based on colors from Base16: http://chriskempson.github.io/base16/#default.
- */
-
-/* Red */
+/* Theme colors (keep existing theme classes) */
 .theme-base-08 .sidebar,
 .theme-base-08 .sidebar-toggle:active,
 .theme-base-08 #sidebar-checkbox:checked~.sidebar-toggle {
@@ -474,7 +427,7 @@ a.pagination-item:hover {
   color: #ac4142;
 }
 
-/* Orange */
+/* Continue with other theme colors... */
 .theme-base-09 .sidebar,
 .theme-base-09 .sidebar-toggle:active,
 .theme-base-09 #sidebar-checkbox:checked~.sidebar-toggle {
@@ -487,7 +440,6 @@ a.pagination-item:hover {
   color: #d28445;
 }
 
-/* Yellow */
 .theme-base-0a .sidebar,
 .theme-base-0a .sidebar-toggle:active,
 .theme-base-0a #sidebar-checkbox:checked~.sidebar-toggle {
@@ -500,7 +452,6 @@ a.pagination-item:hover {
   color: #f4bf75;
 }
 
-/* Green */
 .theme-base-0b .sidebar,
 .theme-base-0b .sidebar-toggle:active,
 .theme-base-0b #sidebar-checkbox:checked~.sidebar-toggle {
@@ -513,7 +464,6 @@ a.pagination-item:hover {
   color: #90a959;
 }
 
-/* Cyan */
 .theme-base-0c .sidebar,
 .theme-base-0c .sidebar-toggle:active,
 .theme-base-0c #sidebar-checkbox:checked~.sidebar-toggle {
@@ -526,7 +476,6 @@ a.pagination-item:hover {
   color: #75b5aa;
 }
 
-/* Blue */
 .theme-base-0d .sidebar,
 .theme-base-0d .sidebar-toggle:active,
 .theme-base-0d #sidebar-checkbox:checked~.sidebar-toggle {
@@ -539,7 +488,6 @@ a.pagination-item:hover {
   color: #6a9fb5;
 }
 
-/* Magenta */
 .theme-base-0e .sidebar,
 .theme-base-0e .sidebar-toggle:active,
 .theme-base-0e #sidebar-checkbox:checked~.sidebar-toggle {
@@ -552,7 +500,6 @@ a.pagination-item:hover {
   color: #aa759f;
 }
 
-/* Brown */
 .theme-base-0f .sidebar,
 .theme-base-0f .sidebar-toggle:active,
 .theme-base-0f #sidebar-checkbox:checked~.sidebar-toggle {
@@ -565,14 +512,7 @@ a.pagination-item:hover {
   color: #8f5536;
 }
 
-
-/*
- * Overlay sidebar
- *
- * Make the sidebar content overlay the viewport content instead of pushing it
- * aside when toggled.
- */
-
+/* Overlay sidebar */
 .sidebar-overlay #sidebar-checkbox:checked~.wrap {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -587,7 +527,6 @@ a.pagination-item:hover {
   box-shadow: .25rem 0 .5rem rgba(0, 0, 0, .1);
 }
 
-/* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked~.sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0, 0, 0, .1);
 }
@@ -596,49 +535,10 @@ a.pagination-item:hover {
   padding-top: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #181818;
-    color: #c0c0c0;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .post-title {
-    color: #9a9a9a;
-  }
-
-  .masthead {
-    border-bottom-color: #313131;
-  }
-
-  .sidebar-toggle {
-    background-color: #181818;
-  }
-
-  .highlight pre,
-  code {
-    background-color: #313131;
-  }
-
-  tbody tr:nth-child(odd) td,
-  tbody tr:nth-child(odd) th {
-    background-color: #323232;
-  }
-
-  strong {
-    color: #ffffff;
-  }
-}
-
 #results-container {
   position: relative;
   z-index: 3;
-  background-color: #202020;
+  background-color: var(--sidebar-bg);
 }
 
 #results-container p {
@@ -660,3 +560,5 @@ a.pagination-item:hover {
   width: 100%;
   filter: invert(1);
 }
+
+/* Remove the old @media (prefers-color-scheme: dark) rule since we're handling it with data-theme */
