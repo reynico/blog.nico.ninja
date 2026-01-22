@@ -14,47 +14,47 @@ The board outputs a few milliwatts of RF power (100-150mW), enough to drive almo
 
 Given that both of us were anxious to try it out, I ordered a complete kit on Aliexpress: 1GB Raspberry Pi 4, SD card, 7" touchscreen display, and the RadioBerry board itself. A few weeks later, the kit arrived, and we started playing with it.
 
-![Kit from Aliexpress](../assets/images/RadioBerry-vertex-1/kit.jpeg)
+![Kit from Aliexpress](../assets/images/radioberry-vertex-1/kit.jpeg)
 
 The first thing I tried was tuning in some local AM broadcast stations to see if the thing could actually receive anything. I also made it transmit locally to check the modulation with an SDR dongle. I was surprised by the audio quality, given that I was using a cheap USB soundcard and a lavalier microphone for testing.
 
-![AM Broadcast reception](../assets/images/RadioBerry-vertex-1/am-reception.jpg)
+![AM Broadcast reception](../assets/images/radioberry-vertex-1/am-reception.jpg)
 
 My dad mentioned he had a Vertex Standard (Yaesu) [VX1700](https://www.rigpix.com/protrx/vertexstandard_vx1700.htm) HF SSB transceiver that could work for this project. The radio was missing its plastic front panel but otherwise functional. It pushed 100-120 watts of RF power, and the BPF board still worked. This seemed like the perfect foundation: a working amplifier stage with proper filtering, just waiting for a new interface.
 
-![Vertex VX1700](../assets/images/RadioBerry-vertex-1/vx1700.jpg)
+![Vertex VX1700](../assets/images/radioberry-vertex-1/vx1700.jpg)
 
 While my dad worked on the radio conversion—removing unneeded components, cleaning up, making RF adjustments—I started designing a 3D printed front panel that could house the 7" display, buttons, and knobs.
 
-![Front panel bezel](../assets/images/RadioBerry-vertex-1/front-panel-bezel-1.png)
+![Front panel bezel](../assets/images/radioberry-vertex-1/front-panel-bezel-1.png)
 
 The panel ended up huge due to the screen size. A 5" display probably would have been better suited, but these were our first tests, so we went ahead with what we had. I used five KY-040 rotary encoders with push buttons, a 4x4 matrix keyboard, and a Raspberry Pi Pico RP2040 to emulate MIDI signals. The RP2040 connects to the Raspberry Pi 4 via USB.
 
-![Mounting encoders and keypad in bezel](../assets/images/RadioBerry-vertex-1/bezel-mounting-1.jpeg)
+![Mounting encoders and keypad in bezel](../assets/images/radioberry-vertex-1/bezel-mounting-1.jpeg)
 
 From the operator's perspective, it looked like this. The big hole down on the right was for the DIN microphone connector. That Arduino Nano in the back controls the BPF board.
 
-![Front panel, mounted](../assets/images/RadioBerry-vertex-1/front-panel-mounted.jpeg)
+![Front panel, mounted](../assets/images/radioberry-vertex-1/front-panel-mounted.jpeg)
 
 And from behind, without the cover:
 
-![Front panel, from back](../assets/images/RadioBerry-vertex-1/front-panel-from-back.jpeg)
+![Front panel, from back](../assets/images/radioberry-vertex-1/front-panel-from-back.jpeg)
 
 After a few test prints and adjustments—mostly fitting issues, holes that were too small, bad tolerances, the usual 3D printing problems—this was the final result:
 
-![Front panel RC1](../assets/images/RadioBerry-vertex-1/front-panel-bezel-2.jpeg)
+![Front panel RC1](../assets/images/radioberry-vertex-1/front-panel-bezel-2.jpeg)
 
 Once the final front panel form was ready, we started putting everything together. The Raspberry Pi is now mounted on the radio, and the Arduino Nano controls the BPF board. The 3D-printed front panel houses the buttons, encoders, display, and RP2040. Between the front panel and the radio, there are only a few wires: microphone, PTT, the display's flat cable, and the RP2040's USB cable. You can also see a small speaker, a [PAM8403](https://www.digikey.com/en/products/detail/diodes-incorporated/PAM8403DR-H/4033372) audio amplifier (I should be used a mono version), and a cheap USB audio interface. Initially, we used the USB audio interface's speaker output, but it introduced too much noise. We ended up using the Raspberry Pi's internal speaker jack instead. Now the USB audio card only handles microphone input.
 
-![Vertex VX1700 populated](../assets/images/RadioBerry-vertex-1/vertex-populated-1.jpeg)
+![Vertex VX1700 populated](../assets/images/radioberry-vertex-1/vertex-populated-1.jpeg)
 
 My dad operating the RadioBerry VX1700:
 
-![VX1700 working](../assets/images/RadioBerry-vertex-1/vx1700-working.png)
+![VX1700 working](../assets/images/radioberry-vertex-1/vx1700-working.png)
 
 Pushing almost 160W on SSB (1000W element slug):
 
-![Pushing 160w](../assets/images/RadioBerry-vertex-1/bird-160w.jpeg)
+![Pushing 160w](../assets/images/radioberry-vertex-1/bird-160w.jpeg)
 
 ## Controlling the BPF board
 
@@ -79,7 +79,7 @@ Since this setup was already working, an Arduino Nano could handle both jobs: em
 
 To control the front panel knobs and buttons, we used a Raspberry Pi Pico (RP2040), which offers plenty of timers and I/O pins. The front panel comprises five rotary encoders with buttons and a 4x4 keypad matrix.
 
-![Front panel schematics](../assets/images/RadioBerry-vertex-1/front-panel-schematic.png)
+![Front panel schematics](../assets/images/radioberry-vertex-1/front-panel-schematic.png)
 
 The RP2040 acts as a MIDI controller emulator, reading the electrical signals and converting them to MIDI notes. PiHPSDR supports MIDI as a solution for interfacing in-app buttons with physical controls; you just need to map MIDI notes to actions.
 
@@ -91,7 +91,7 @@ The solution is an OR gate circuit. The first gate input comes from a front-pane
 
 This way, if you power off the device from the front-panel switch, the Raspberry Pi is signaled to run `poweroff`. Once the Raspberry Pi is powered off, both inputs to the OR gate are low, shutting off power to the relay. The large capacitor hooked to the transistor's base creates a slight delay in powering off the output, giving a few seconds of cooldown to keep things in the safe zone.
 
-![Soft shutdown schematics](../assets/images/RadioBerry-vertex-1/soft-shutdown-schematic.png)
+![Soft shutdown schematics](../assets/images/radioberry-vertex-1/soft-shutdown-schematic.png)
 
 K1 controls the power supply for the Raspberry Pi.
 
