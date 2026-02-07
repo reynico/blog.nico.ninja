@@ -35,6 +35,7 @@ The process of building four boards, reverse engineering the display, and integr
   - [Soft shutdown circuit](#soft-shutdown-circuit)
   - [Mounting everything](#mounting-everything)
 - [Putting it all together](#putting-it-all-together)
+- [The 7" LCD Display Challenge](#the-7-lcd-display-challenge)
 - [Frequency calibration: from Hz to PPM](#frequency-calibration-from-hz-to-ppm)
 - [What's still missing](#whats-still-missing)
 - [Lessons learned](#lessons-learned)
@@ -304,6 +305,32 @@ Tuned to 40 meters and receiving properly - the LCD showing frequency, the S-met
 
 [![FT-80C tuning and receiving](../assets/images/radioberry-ft80c-1/ft80c-tuning-working.jpeg)](../assets/images/radioberry-ft80c-1/ft80c-tuning-working.jpeg){:target="_blank"}
 
+## The 7" LCD Display Challenge
+
+A few days after finishing the main build, the [Hosyond 7" touchscreen](https://www.amazon.com/dp/B0D3QB7X4Z) I had ordered finally arrived. The plan was to mount it on top of the radio to run piHPSDR's interface, giving me full control without needing an external monitor.
+
+[![7" LCD screen connected to Raspberry Pi 4](../assets/images/radioberry-ft80c-1/lcd-screen-connected-pi4.jpeg)](../assets/images/radioberry-ft80c-1/lcd-screen-connected-pi4.jpeg){:target="_blank"}
+
+The screen worked perfectly when connected directly to the Raspberry Pi. The problem became apparent when I tried to figure out where to mount it: the included flex cable was way too short to route from the Pi inside the chassis to a display mounted on top of the radio.
+
+I remembered I had bought some 30cm flex cable extensions a while back for another project. Perfect - or so I thought. I connected one extension, powered everything up, and the screen stayed dark. No backlight, no image, nothing.
+
+After some head-scratching and multimeter probing, I figured out the issue: the flex cable extensions I had were straight-through cables (pin 1 to pin 1, pin 2 to pin 2, and so on), but the Hosyond display needed a crossover cable where the pins are reversed.
+
+The solution was simple in theory but tedious in practice: I could chain two straight-through extensions together. The first one would flip the pins, the second one would flip them back, resulting in a crossover connection. This would give me a 60cm extension - more than enough length to route from the Pi to the top of the radio.
+
+[![Flex cable extension being assembled](../assets/images/radioberry-ft80c-1/lcd-screen-flex-build.jpeg)](../assets/images/radioberry-ft80c-1/lcd-screen-flex-build.jpeg){:target="_blank"}
+
+I carefully soldered the two 30cm extensions end-to-end, ensuring the connections were clean and the wiring neat. Flex cables are delicate, and a single cold-solder joint would mean redoing the whole thing.
+
+[![Testing the custom flex cable extension](../assets/images/radioberry-ft80c-1/lcd-screen-test-flex.jpeg)](../assets/images/radioberry-ft80c-1/lcd-screen-test-flex.jpeg){:target="_blank"}
+
+The first test was nerve-wracking. I connected everything, powered on, and the screen lit up immediately. Success.
+
+[![7" LCD showing piHPSDR interface](../assets/images/radioberry-ft80c-1/lcd-screen-working-pihpsdr.jpeg)](../assets/images/radioberry-ft80c-1/lcd-screen-working-pihpsdr.jpeg){:target="_blank"}
+
+With piHPSDR running on the touchscreen, the radio finally feels complete. I can tune, switch modes, adjust settings, and view the waterfall - all without touching a keyboard or an external monitor.
+
 ## Frequency calibration: from Hz to PPM
 
 Once the radio was working, I noticed that the frequency wasn't perfectly aligned. I had already seen this with the [Vertex VX1700 build]({% post_url 2026-01-22-radioberry-vertex-vx1700-1 %}), but back then we were mostly operating on 40 meters so it wasn't a big deal. With the FT-80C I wanted to use multiple bands, and the issue became impossible to ignore.
@@ -357,8 +384,8 @@ One PPM value, all bands calibrated. This is a small change, but it makes a real
 
 This is still a work in progress. Before I can put the radio on the air properly, I need to:
 
-- **7" LCD display**: I'm waiting for a 7" touchscreen LCD to arrive, which I plan to mount on top of the radio for the piHPSDR interface
 - **Front panel buttons**: Design and 3D print the missing buttons for the front panel
+- **Display mounting bracket**: Design a proper bracket to mount the 7" LCD on top of the radio
 
 ## Lessons learned
 
