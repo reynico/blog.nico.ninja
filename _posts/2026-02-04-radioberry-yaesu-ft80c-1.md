@@ -35,6 +35,7 @@ The process of building four boards, reverse engineering the display, and integr
   - [Soft shutdown circuit](#soft-shutdown-circuit)
   - [Mounting everything](#mounting-everything)
 - [Putting it all together](#putting-it-all-together)
+- [3D Printed Front Panel Buttons](#3d-printed-front-panel-buttons)
 - [The 7" LCD Display Challenge](#the-7-lcd-display-challenge)
 - [Frequency calibration: from Hz to PPM](#frequency-calibration-from-hz-to-ppm)
 - [What's still missing](#whats-still-missing)
@@ -305,6 +306,24 @@ Tuned to 40 meters and receiving properly - the LCD showing frequency, the S-met
 
 [![FT-80C tuning and receiving](../assets/images/radioberry-ft80c-1/ft80c-tuning-working.jpeg)](../assets/images/radioberry-ft80c-1/ft80c-tuning-working.jpeg){:target="_blank"}
 
+## 3D Printed Front Panel Buttons
+
+Since I repurposed the front panel buttons to work with piHPSDR and the RadioBerry, their original functions no longer matched what they actually did. I remapped them to functions that made more sense for this setup.
+
+Fortunately, [Matías - LU4BA](https://www.qrz.com/db/LU4BA) had shared [STL files for FT-80C buttons on Thingiverse](https://www.thingiverse.com/thing:6796234), which gave me a starting point. I went through several iterations trying to get them right.
+
+[![Various button printing attempts](../assets/images/radioberry-ft80c-1/buttons_several_tests.jpeg)](../assets/images/radioberry-ft80c-1/buttons_several_tests.jpeg){:target="_blank"}
+
+The main challenge was finding the right combination of material, layer height, and print orientation. Some came out too brittle, others didn't fit the switches properly, and a few just looked wrong. After probably 8-10 test prints, I settled on a configuration that worked. Text were printed with 110% flow, and with a babystep-z of -0.1000.
+
+[![Final button style](../assets/images/radioberry-ft80c-1/buttons_final_style.jpeg)](../assets/images/radioberry-ft80c-1/buttons_final_style.jpeg){:target="_blank"}
+
+The final buttons are printed in PLA with 0.15mm layer height. I added text labels by pausing the print mid-layer and swapping to a different color filament for the lettering - a technique called filament swap.
+
+[![Installed buttons on the front panel](../assets/images/radioberry-ft80c-1/installed_buttons.png)](../assets/images/radioberry-ft80c-1/installed_buttons.png){:target="_blank"}
+
+They're installed and functional now. I'm not 100% convinced about how they look - the originals had better texture and feel - but they work, and they're definitely an improvement over missing buttons. The STL files I used are available in the [GitHub repository](https://github.com/reynico/radioberry-setup/tree/main/3d-printed-parts-ft-80c).
+
 ## The 7" LCD Display Challenge
 
 A few days after finishing the main build, the [Hosyond 7" touchscreen](https://www.amazon.com/dp/B0D3QB7X4Z) I had ordered finally arrived. The plan was to mount it on top of the radio to run piHPSDR's interface, giving me full control without needing an external monitor.
@@ -384,7 +403,6 @@ One PPM value, all bands calibrated. This is a small change, but it makes a real
 
 This is still a work in progress. Before I can put the radio on the air properly, I need to:
 
-- **Front panel buttons**: Design and 3D print the missing buttons for the front panel
 - **Display mounting bracket**: Design a proper bracket to mount the 7" LCD on top of the radio
 
 ## Lessons learned
