@@ -12,7 +12,7 @@ Shortly after finishing the [Vertex VX1700 RadioBerry build]({% post_url 2026-01
 
 The FT-80C (also sold as FT-747GX) is a classic late-80s HF transceiver. Unlike the VX1700, where I built a completely new front panel with a touchscreen, this time I wanted to preserve the original look. The challenge was clear: make the RadioBerry control everything while keeping the radio looking exactly like it did 35 years ago, ensuring aesthetic integrity while adding modern functionality.
 
-[![FT-80C on the workbench](../assets/images/radioberry-ft80c-1/ft80c-initial-open.jpeg)](../assets/images/radioberry-ft80c-1/ft80c-initial-open.jpeg){:target="_blank"}
+[![FT-80C with RadioBerry installed](../assets/images/radioberry-ft80c-1/header.jpg)](../assets/images/radioberry-ft80c-1/header.jpg){:target="_blank"}
 
 The process of building four boards, reverse engineering the display, and integrating controls was challenging, but sharing this journey aims to inspire your own projects.
 
@@ -50,7 +50,7 @@ Before touching anything, I spent a couple of evenings just studying the radio. 
 - The original LCD display (a mysterious custom part labeled FTD8627PZ)
 - All front panel controls are in working condition
 
-[![FT-80C top view](../assets/images/radioberry-ft80c-1/ft80c-top-open.jpeg)](../assets/images/radioberry-ft80c-1/ft80c-top-open.jpeg){:target="_blank"}
+[![FT-80C top view](../assets/images/radioberry-ft80c-1/ft80c-initial-open.jpeg)](../assets/images/radioberry-ft80c-1/ft80c-initial-open.jpeg){:target="_blank"}
 
 The plan was to use the RadioBerry as the brain, feeding its output (about 100-150mW) into the existing PA stage. The tricky part would be controlling everything else: filter selection, TX/RX switching, the display, and all those buttons.
 
@@ -350,6 +350,22 @@ The first test was nerve-wracking. I connected everything, powered on, and the s
 
 With piHPSDR running on the touchscreen, the radio finally feels complete. I can tune, switch modes, adjust settings, and view the waterfall - all without touching a keyboard or an external monitor.
 
+Now I just needed a proper way to mount the screen on top of the radio. Just laying it flat would work, but it wouldn't be comfortable to use. I wanted it angled, like a display you'd actually want to interact with.
+
+I designed a simple mounting bracket in 3D with two legs that sit on top of the FT-80C chassis. The design holds the screen at a comfortable viewing angle - not too steep, not too flat. The bracket is essentially a box that the screen slides into, with cutouts for the cables and mounting holes to secure everything.
+
+[![3D printed LCD mounting bracket](../assets/images/radioberry-ft80c-1/lcd-box.jpg)](../assets/images/radioberry-ft80c-1/lcd-box.jpg){:target="_blank"}
+
+Once the print was done, I mounted the screen into the bracket. The fit was tight enough that it doesn't move around, but I can still remove it if needed.
+
+[![LCD mounted in bracket](../assets/images/radioberry-ft80c-1/lcd-box-mounted.jpg)](../assets/images/radioberry-ft80c-1/lcd-box-mounted.jpg){:target="_blank"}
+
+The final result sits nicely on top of the radio. The angle makes it easy to see and use the touchscreen without hunching over. The flex cable routes cleanly from inside the chassis up to the display.
+
+[![LCD bracket installed on radio](../assets/images/radioberry-ft80c-1/lcd-box-mounted-final.jpg)](../assets/images/radioberry-ft80c-1/lcd-box-mounted-final.jpg){:target="_blank"}
+
+The [STL files for the mounting bracket](https://github.com/reynico/radioberry-setup/tree/main/3d-printed-parts-ft-80c) are available in the GitHub repository if you want to print your own.
+
 ## Frequency calibration: from Hz to PPM
 
 Once the radio was working, I noticed that the frequency wasn't perfectly aligned. I had already seen this with the [Vertex VX1700 build]({% post_url 2026-01-22-radioberry-vertex-vx1700-1 %}), but back then we were mostly operating on 40 meters so it wasn't a big deal. With the FT-80C I wanted to use multiple bands, and the issue became impossible to ignore.
@@ -401,9 +417,7 @@ One PPM value, all bands calibrated. This is a small change, but it makes a real
 
 ## What's still missing
 
-This is still a work in progress. Before I can put the radio on the air properly, I need to:
-
-- **Display mounting bracket**: Design a proper bracket to mount the 7" LCD on top of the radio
+At this point, the radio is fully functional and ready to use. All the major components are working: the PA stage, filter switching, front panel controls, LCD display, and the touchscreen interface. I've been using it on the air and it performs well.
 
 ## Lessons learned
 
