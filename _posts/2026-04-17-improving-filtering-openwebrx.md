@@ -18,7 +18,7 @@ A few weeks ago, I decided to investigate further into the noisy figure of my SD
 
 [![Lowering the gain has no effect in noise](../assets/images/improving-filtering-sdr-1/reduce-gain.jpg)](../assets/images/improving-filtering-sdr-1/reduce-gain.jpg){:target="_blank"}
 
-But I found that setting the LNA gain to 0 and adjusting the VGA gain reduced much of the internally induced noise. So I thought I could hook up an SPF5189Z LNA I had in my radio box. Coupled with the homemade FM band-stop filter, this should do a pretty good job. Even better, I also added several ferrite beads to the USB and coaxial cables.
+But I found that setting the LNA gain to 0 and adjusting the VGA gain reduced much of the internally induced noise. So I thought I could hook up an [SPF5189Z](../assets/images/improving-filtering-sdr-1/SPF5189Z.PDF) LNA I had in my radio box. Coupled with the homemade FM band-stop filter, this should do a pretty good job. Even better, I also added several ferrite beads to the USB and coaxial cables.
 
 [![LNA and filter](../assets/images/improving-filtering-sdr-1/lna-and-filter.jpg)](../assets/images/improving-filtering-sdr-1/lna-and-filter.jpg){:target="_blank"}
 
@@ -29,5 +29,5 @@ And indeed that was it.
 
 Although I still run the SDR with the not-so-good Flower Pot antenna, it works very well, I guess, due to the high elevation in this zone.
 
-Next steps: replace the Flower Pot with something vertical and omnidirectional with higher gain, and modify the SPF5189Z to feed it through a bias-tee.
+Next steps: replace the Flower Pot with something vertical and omnidirectional with higher gain, and modify the [SPF5189Z](../assets/images/improving-filtering-sdr-1/SPF5189Z.PDF) to feed it through a bias-tee.
 
