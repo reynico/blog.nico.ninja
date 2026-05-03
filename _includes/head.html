@@ -53,6 +53,39 @@
   {% endif %}
   {% seo title=false description=false%}
 
+  {% if page.mermaid %}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    function getMermaidTheme() {
+      var theme = document.documentElement.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      return theme === 'dark' ? 'dark' : 'neutral';
+    }
+
+    mermaid.initialize({ startOnLoad: true, theme: getMermaidTheme() });
+
+    function rerenderMermaid() {
+      document.querySelectorAll('.mermaid').forEach(function (el) {
+        var src = el.getAttribute('data-mermaid-src');
+        if (!src) {
+          src = el.textContent;
+          el.setAttribute('data-mermaid-src', src);
+        }
+        el.removeAttribute('data-processed');
+        el.innerHTML = src;
+      });
+      mermaid.initialize({ startOnLoad: false, theme: getMermaidTheme() });
+      mermaid.run();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.mermaid').forEach(function (el) {
+        el.setAttribute('data-mermaid-src', el.textContent);
+      });
+    });
+  </script>
+  {% endif %}
+
   <button class="theme-toggle" aria-label="Toggle theme">
     <span class="theme-icon">🌙</span>
   </button>

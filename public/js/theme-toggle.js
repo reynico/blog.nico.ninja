@@ -40,6 +40,7 @@
 
         localStorage.setItem('theme', newTheme);
         applyTheme(newTheme);
+        if (typeof rerenderMermaid === 'function') rerenderMermaid();
     }
 
     // Initialize theme on page load
@@ -52,6 +53,7 @@
     prefersDarkScheme.addEventListener('change', function (e) {
         if (!localStorage.getItem('theme')) {
             applyTheme(e.matches ? 'dark' : 'light');
+            if (typeof rerenderMermaid === 'function') rerenderMermaid();
         }
     });
 
