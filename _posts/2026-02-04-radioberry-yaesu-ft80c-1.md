@@ -38,7 +38,7 @@ The process of building four boards, reverse engineering the display, and integr
 - [3D Printed Front Panel Buttons](#3d-printed-front-panel-buttons)
 - [The 7" LCD Display Challenge](#the-7-lcd-display-challenge)
 - [Frequency calibration: from Hz to PPM](#frequency-calibration-from-hz-to-ppm)
-- [What's still missing](#whats-still-missing)
+- [Remote control and digital modes](#remote-control-and-digital-modes)
 - [Lessons learned](#lessons-learned)
 
 ## First steps: understanding what I had
@@ -415,9 +415,19 @@ TX also confirmed proper alignment on both bands:
 
 One PPM value, all bands calibrated. This is a small change, but it makes a real difference when you're operating across the HF spectrum.
 
-## What's still missing
+## Remote control and digital modes
 
-At this point, the radio is fully functional and ready to use. All the major components are working: the PA stage, filter switching, front panel controls, LCD display, and the touchscreen interface. I've been using it on the air and it performs well.
+At this point, the radio is fully functional and ready to use. All the major components are working: the PA stage, filter switching, front-panel controls, LCD display, and touchscreen interface. I've been using it on the air, and it performs well. I'd like to test the remoteness of the Radioberry module, such as the Hermes one. I compiled piHPSDR for my M1 Mac and successfully connected to the Radioberry module.
+
+[![Remote control - PIHPSDR on a Mac](../assets/images/radioberry-ft80c-1/pihpsdr-remote-macos.png)](../assets/images/radioberry-ft80c-1/pihpsdr-remote-macos.png){:target="_blank"}
+
+
+Still, I noticed that the TX/RX relay sometimes clicked, as if it were disconnecting the TX at a very high rate. At first, I thought the problem was that the readings from the Arduino controlling the LPF and TX relay were hitting a threshold, but that was not the case. Then I thought RF might be getting into the Arduino's data lines, but I realized the problem was in the software itself. That was funny because the bug had existed all along. Still, when using it locally (as in, on the same machine for the server-client protocol), the time window between events is so small that the race condition doesn't trigger. But even in a local network, a few microseconds of delay are painful. I ended up opening a pull request upstream to fix it: https://github.com/g0orx/pihpsdr/pull/207. After fixing it, I had a few successful QSOs using my Mac as the RadioBerry client, away from the radio shack.
+
+I also wanted to test some digital modes. Although I am not a big fan of digital modes, I have found them useful for testing propagation. Firing up JTDX along with piHPSDR in a Remote Desktop session (so I can accommodate the windows on a higher-resolution screen) worked great. For PTT, I have used VOX in both programs; that way, I don't need to mess around with RTS/DTR signals or hook up piHPSDR somehow. For the audio signals, I set two null sink modules (also known as virtual cables) so JTDX and piHPSDR can communicate bidirectionally.
+
+[![JTDX](../assets/images/radioberry-ft80c-1/pihpsdr-jtdx.png)](../assets/images/radioberry-ft80c-1/pihpsdr-jtdx.png){:target="_blank"}
+
 
 ## Lessons learned
 
