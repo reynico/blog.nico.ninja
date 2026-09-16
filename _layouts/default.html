@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.url == "/" %}{{ site.title }} | {{ site.tagline }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="icon" href="/public/favicon.ico">
+<style>
+body{font-family:"Times New Roman",Times,serif;font-size:16px;background:#fff;color:#000;margin:8px}
+a{color:#00c}a:visited{color:#609}
+table.layout{width:100%;border-collapse:collapse}
+table.layout>tbody>tr>td{vertical-align:top;padding:4px 8px}
+td.nav{width:200px;border-right:1px solid #999;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5}
+td.nav a{display:block;text-decoration:none}
+td.nav a:hover{text-decoration:underline}
+div.content{max-width:52em}
+img{max-width:100%;height:auto}
+pre{background:#f4f4f4;border:1px solid #ccc;padding:6px;overflow:auto;font-size:14px}
+code{font-family:"Courier New",Courier,monospace;font-size:14px}
+blockquote{margin-left:1em;padding-left:1em;border-left:3px solid #ccc;color:#333}
+div.content table td,div.content table th{border:1px solid #999;padding:2px 6px}
+h1{font-size:1.6em}h2{font-size:1.3em}h3{font-size:1.1em}
+small,.meta{color:#555}
+@media (max-width:700px){table.layout,table.layout>tbody{display:block}table.layout>tbody>tr{display:flex;flex-direction:column}table.layout>tbody>tr>td{display:block;width:auto}td.nav{order:2;border-right:0;border-top:1px solid #999;margin-top:1em}}
+</style>
+</head>
+<body>
+<table class="layout">
+<tr>
+<td class="nav">
+{% include nav.html %}
+</td>
+<td class="main"><div class="content">
+{{ content }}
+<hr>
+<p class="meta"><small>
+<a href="{{ '/' | relative_url }}">Home</a> |
+<a href="{{ '/tags/' | relative_url }}">Tags</a> |
+<a href="{{ '/feed.xml' | relative_url }}">RSS</a> |
+<a href="https://github.com/{{ site.github_username }}">GitHub</a> |
+<a href="https://x.com/{{ site.twitter_username }}">X</a>
+</small></p>
+</div></td>
+</tr>
+</table>
+</body>
+</html>

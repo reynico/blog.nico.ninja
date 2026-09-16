@@ -130,7 +130,7 @@ And with the lid closed
 # Video showoff
 A quick video on how values are displayed
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/3dFRwNVLIOI" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/3dFRwNVLIOI" frameborder="0" allowfullscreen></iframe>
 
 # Files and Resources
 

@@ -11,7 +11,7 @@ description: Signals from outer space, Hunting for data at thousands of kilomete
 The talk outlines a timeline of the fascinating exploration into the world of satellite communications using open-source software and low-cost Software-Defined Radio (SDR) receivers. With the advancement of technologies, telecommunications have become accessible to enthusiasts and researchers. This accessibility extends not only to terrestrial communications but also to those traversing space at distances of hundreds or thousands of kilometers.
 
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/41i52LhWb9M" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/41i52LhWb9M" frameborder="0" allowfullscreen></iframe>
 
 
 

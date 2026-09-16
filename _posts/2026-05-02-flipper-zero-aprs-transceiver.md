@@ -3,7 +3,6 @@ layout: post
 title: "Flipper Zero APRS Transceiver"
 date: 2026-05-03 18:20:00 -0300
 tags: [Radio, Electronics]
-mermaid: true
 description: Building a APRS transceiver out of a Flipper Zero and a DRA818V module
 ---
 
@@ -39,7 +38,7 @@ Doing TX with the DRA818 module was quite straightforward. The existing AFSK wav
 
 Since I run my own [OpenWebRX+]({% post_url 2024-12-15-dual-band-openwebrx %}) server with an AX.25 decoder enabled, I was able to test it in just a few hours. TX was suspiciously easy (of course, because it was based on Richard's work), but very satisfying since I was pushing around 500 mW of FM power to the air, which is like 50x more than the CC1101 internal module.
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/i2zG8IQZOOk" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/i2zG8IQZOOk" frameborder="0" allowfullscreen></iframe>
 
 
 # Reception
@@ -128,26 +127,7 @@ In retrospect, this (I think) explains why the first 7 bytes of each frame decod
 
 Up to this point, I had decided that the polling approach was fundamentally broken. No amount of parameter tuning could overcome RTOS timing jitter. Here is the somewhat final architecture diagram that worked best for me.
 
-<div class="mermaid">
-graph TD
-      TIM2["TIM2<br/>64 MHz / 4848 = 13201 Hz"] -->|TRGO<br/>hardware trigger| ADC1["ADC1<br/>starts conversion at exact timer tick"]
-      ADC1 --> ISR["TIM2 Update ISR"]
-      ISR --> |stores sample| BUF["Circular Buffer<br/>256 x int16_t"]
-      BUF --> |notifies every<br/>64 samples| WORKER["Worker Thread"]
-
-      subgraph ISR_DETAIL [" "]
-          direction LR
-          I1[Wait ADC EOC] --> I2[Read 12-bit result] --> I3[Store in buffer] --> I4[Notify worker]
-      end
-
-      subgraph WORKER_DETAIL [" "]
-          direction LR
-          W1[Drain buffer] --> W2[Delay-and-multiply] --> W3[Carrier noise gate] --> W4[AX.25 framing] --> W5[APRS decode]
-      end
-
-      ISR -.-> ISR_DETAIL
-      WORKER -.-> WORKER_DETAIL
-</div>
+![APRS decoder data flow: TIM2 triggers ADC1, the ISR fills a circular buffer, and a worker thread demodulates and decodes](../assets/images/flipper-zero-aprs-trx-1/aprs-decoder-flow.svg)
 
 TIM2 triggers the ADC via hardware TRGO. The conversion starts at the exact timer tick, not when the ISR enters. ISR latency (1-2 uS) only affects the result collection, not the sample acquisition, and the sample rate is now crystal-locked at 13,201 Hz (~0.01% error).
 
@@ -170,7 +150,7 @@ if(bit_phase >= 11) {
 
 Once the carrier is detected, ALL bits are processed regardless of instantaneous LPF magnitude dips. After 20-bit periods of silence, reset to the hunt state. This achieved a 100% success rate in decoding AX.25 packets, even under harsh conditions with a low signal-to-noise ratio. 
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/M0hjUN8xKgM" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/M0hjUN8xKgM" frameborder="0" allowfullscreen></iframe>
 
 # UI work
 

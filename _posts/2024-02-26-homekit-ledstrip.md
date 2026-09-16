@@ -104,7 +104,7 @@ Since you may want to create a case anyways and avoid using the nasty power supp
 
 To wrap up, here's a video showcasing the completed project. In this demonstration, I am able to change between colors either from the Home application UI or by hand, using the rotary encoder. It's the perfect fusion of convenience and hands-on interaction.
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/R-z66AuJ1B4" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/R-z66AuJ1B4" frameborder="0" allowfullscreen></iframe>
 
 # Resources
 

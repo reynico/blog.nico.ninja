@@ -3,7 +3,6 @@ layout: post
 title: "Building a SatNOGS ground station"
 date: 2026-08-08 18:20:00 -0300
 tags: [Radio, Electronics]
-mermaid: true
 description: Building a SatNOGS ground station, messing with filters and amplifiers
 ---
 

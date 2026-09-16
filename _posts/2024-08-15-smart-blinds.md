@@ -118,4 +118,4 @@ At this point, I disabled the Internet traffic from within my IoT Network (You c
 
 I still need to play with the motors. For now, I programmed two automation behavior: open the blinds to 50% at sunrise and close them at sunset, and they work flawlessly. It's great to start the day with a lovely sunbath ❤️.
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/voDyzjgVs6o" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/voDyzjgVs6o" frameborder="0" allowfullscreen></iframe>

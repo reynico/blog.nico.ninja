@@ -1,0 +1,8 @@
+<p><b><a href="{{ '/' | relative_url }}">Home</a></b>
+<a href="{{ '/tags/' | relative_url }}">Tags</a>
+<a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
+<p>
+{%- for post in site.posts %}
+<a href="{{ post.url | relative_url }}"{% if page.url == post.url %} style="font-weight:bold"{% endif %}>{{ post.title }}</a>
+{%- endfor %}
+</p>

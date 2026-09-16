@@ -147,4 +147,4 @@ The front LED lamp is quite powerful, enough for a small bike. This is what the 
 # Video showoff
 This video provides a quick walkthrough of all the new features added to the EZ90, including front low and high beam lights, turn lights, brake lights, and a horn.
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/Lve67CPaX-w" frameborder="0" allowfullscreen></iframe>
+<iframe loading="lazy" width="100%" height="500px" src="https://www.youtube.com/embed/Lve67CPaX-w" frameborder="0" allowfullscreen></iframe>

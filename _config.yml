@@ -3,32 +3,24 @@ tagline: A deep dive journey about electronics, computers, radio and so on
 description: Electronics, computers, radio, IoT, motorsports, software development and microcontroller-based projects
 baseurl: ""
 url: "https://blog.nico.ninja"
+author: Nicolas Rey
+github_username: reynico
 twitter_username: reynico
-github_username:  reynico
 permalink: /:categories/:title/
-paginate: 5
-disqus:
-  shortname: blog-nico-ninja
-
-# Build settings
-remote_theme: poole/lanyon
+highlighter: none
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
 
 exclude:
   - .sass-cache/
   - .jekyll-cache/
-  - gemfiles/
+  - hooks/
+  - compose.yml
   - Gemfile
   - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
+  - vendor/
