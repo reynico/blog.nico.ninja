@@ -4,7 +4,7 @@ title: Home
 ---
 <h1>{{ site.title }}</h1>
 <p>{{ site.tagline }}.</p>
-<p>{{ site.description }}. Written by {{ site.author }}.</p>
+<p>{{ site.description }}.</p>
 <h2>Articles</h2>
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% for year in posts_by_year %}
