@@ -3,7 +3,7 @@ layout: post
 title: "Migrating to Home Assistant"
 date: 2024-03-30 17:30:00 -0300
 tags: [Electronics, DIY, Computers]
-description: "Moving my home automation from Apple HomeKit to a Home Assistant virtual machine on Proxmox for more control and privacy."
+description: "HomeKit was getting too basic for me. Moving my home automation to Home Assistant on Proxmox."
 ---
 
 A few weeks ago, a friend reminded me of the simplicity and capacity of [Home Assistant](https://www.home-assistant.io/) as a home automation framework. While I'm not reticent to changes, most of my home automation goes through [Apple HomeKit](https://www.apple.com/home-app/), and I'm somewhat happy with it. However, HomeKit leans on the basic side. Let's dive into a better and more privacy-aware solution for your home automation!

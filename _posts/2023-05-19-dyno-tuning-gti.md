@@ -3,7 +3,7 @@ layout: post
 title: "Dyno Tuning the Golf GTI MK7.5"
 date: 2023-05-19 14:00:00 -0300
 tags: [Motorsports]
-description: "Stock dyno pulls on my Golf GTI MK7.5, the issues found on the rollers, and the real power gains after installing a Stage 1 tune."
+description: "Stock pulls, a surprise on the rollers, and a Stage 1 tune on my Golf GTI MK7.5. Did it really make 310 HP?"
 ---
 
 ![Engine bay](/assets/images/dyno-tuning-gti-1/engine-bay.jpg)

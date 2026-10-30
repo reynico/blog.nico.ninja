@@ -3,7 +3,7 @@ layout: post
 title: "AC power meter"
 date: 2024-03-27 17:30:00 -0300
 tags: [Electronics, DIY]
-description: "A DIY 4-channel 220V AC power meter with non-invasive SCT-013 current sensors, a display and a Prometheus exporter, in a 3D-printed case."
+description: "I didn't want a random WiFi power meter on my network, so I built a 4-channel one with Prometheus metrics."
 ---
 
 I've been investigating those generic WiFi AC power meters for the last few months, [like this one](https://www.ebay.com/itm/385331989345). I'm not entirely happy about connecting third-party stuff to my local network. Even though I have a separate VLAN for IoT, it's weird to install someone else's hardware with god knows what kind of software it runs. So, I decided to build my power meter. 

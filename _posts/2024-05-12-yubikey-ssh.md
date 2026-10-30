@@ -3,7 +3,7 @@ layout: post
 title: "Using your Yubikey for SSH"
 date: 2024-05-12 17:30:00 -0300
 tags: [Security, Computers]
-description: "How to store SSH keys inside a YubiKey using resident (discoverable) FIDO2 keys: generating them, using them on servers and managing them with ykman."
+description: "My SSH private keys live inside a YubiKey now. How resident keys work, and what happens if you lose one."
 ---
 
 Yubikey is a great security product. They are also very reliable. My first Yubikey is still working and has been in service for almost ten years. In addition to their capabilities of hardware-based second-factor authentication, they can also be used to sign in servers with SSH.

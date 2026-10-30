@@ -3,7 +3,7 @@ layout: post
 title: "Flipper Zero APRS Transceiver"
 date: 2026-05-03 18:20:00 -0300
 tags: [Radio, Electronics]
-description: "Building a full VHF APRS transceiver for the Flipper Zero with a DRA818V module: AFSK transmission, demodulation attempts and timing fixes."
+description: "It started as a port of a Flipper Zero APRS transmitter to a DRA818V module and ended up as a full VHF APRS transceiver."
 ---
 
 A few weeks ago, I stumbled upon a cool project in which [YO3GND](https://www.yo3gnd.ro/) uses the [Flipper Zero's internal CC1101 radio as an APRS UHF transmitter.](https://github.com/yo3gnd/flipper-zero-aprs-tx) The C1101 radio can transmit and receive from 300 to ~1 GHz and is the core of the Flipper Zero's Sub-GHz radio. I thought it was a very cool project, but down here in Argentina, APRS is used on VHF at 144.390 MHz.

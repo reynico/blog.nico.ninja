@@ -3,7 +3,7 @@ layout: post
 title: "Hiding your footprints"
 date: 2022-05-15 15:05:00 -0300
 tags: [Security, Internet]
-description: "How to find and clean up the personal data you exposed online over the years: email addresses, usernames, ID numbers and old social network accounts."
+description: "A neverending journey on hiding our digital footprint. Finding the old emails, usernames and accounts you left online, and cleaning up the mess."
 ---
 
 ![social media harms](/assets/images/hiding-1/social-media-harms.jpg)

@@ -3,7 +3,7 @@ layout: post
 title: "Hack your already hacked devices"
 date: 2026-10-18 12:20:00 -0300
 tags: [Electronics, DIY]
-description: "Adding an ENS160+AHT21 air quality and temperature sensor to a Seeed XIAO 7.5 inch ePaper panel already running ESPHome, instead of adding another ESP."
+description: "Instead of adding another ESP to the house, I added an air quality sensor to my already hacked ePaper panel."
 ---
 
 I am always adding something else to my Home Assistant network. A few weeks ago, I received two ENS160+AHT21 modules. These are small boards that combine the ScioSense [ENS160](../assets/files/hack-your-hacked-devices-1/ENS160-Datasheet.pdf) multi-gas sensor and the [AHT21](../assets/files/hack-your-hacked-devices-1/aht21_datasheet.pdf) temperature and humidity sensor. I bought them because of the ENS160: it picks up VOCs like ethanol and toluene, plus other gases like hydrogen and NO2, and gives you an Air Quality Index, TVOC, and eCO2.

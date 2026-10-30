@@ -3,7 +3,7 @@ layout: post
 title: "Upgrading Proxmox VE 7.x"
 date: 2023-11-24 11:00:00 -0300
 tags: [Computers, Internet]
-description: "Step-by-step notes on upgrading a Proxmox VE server from 7.1 to the latest 7.x and then to 8.x: repositories, dist-upgrade, config changes and checks."
+description: "My notes from upgrading my Proxmox VE server from 7.1 all the way to 8.x."
 ---
 
 ![Debian upgrade procedure](/assets/images/upgrading-proxmox-7-8/header.jpg)

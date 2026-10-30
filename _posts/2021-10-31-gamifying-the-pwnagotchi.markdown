@@ -3,7 +3,7 @@ layout: post
 title:  "Gamifying the Pwnagotchi"
 date:   2021-10-31 18:55:00 +0100
 tags: [Computers, DIY]
-description: "Upgrading a Pwnagotchi on a Raspberry Pi Zero W with an e-ink display, GPS geolocation for handshake captures, GPS-based NTP, and a fix for AI mode."
+description: "I added an e-ink display, GPS geolocation and GPS time to my Pwnagotchi, and finally got it to go into AI mode."
 ---
 
 ![gps working](/assets/images/pwnagotchi-1/gps-working.jpg)

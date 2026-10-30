@@ -3,7 +3,7 @@ layout: post
 title: "The perfect fit for my 2011 Macbook Air"
 date: 2024-01-09 19:30:00 -0300
 tags: [Computers, Internet]
-description: "Reviving a mid-2011 MacBook Air with Xubuntu 23.10: installation, configuration, battery health and how it performs today."
+description: "My 2011 MacBook Air was lying in a drawer. Xubuntu 23.10 brought it back to life."
 ---
 
 There is it, lying in a drawer. My first Macbook. This is one of those things I felt in love at first sight. In my opinion, this was Apple's peak design for portable computers, thin, small, lightweight, with outstanding hardware capabilities and performance, and, one of the things I like most, a beautiful screen resolution.

@@ -3,7 +3,7 @@ layout: post
 title: "VHF/UHF OpenWebRX+ receiver"
 date: 2024-12-15 12:30:00 -0300
 tags: [Radio, DIY]
-description: "Setting up a public VHF/UHF OpenWebRX+ web SDR receiver: software install, configuration, hardware and insertion loss measurements."
+description: "Now that I had a VHF/UHF antenna, I put a dual band OpenWebRX+ receiver on the Internet for anyone to listen."
 ---
 
 Following my journey in the Ham Radio operation world, given that I now have a VHF/UHF antenna, I thought it would be awesome to spin up a VHF and UHF Internet-enabled SDR receiver.

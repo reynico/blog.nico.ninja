@@ -3,7 +3,7 @@ layout: post
 title: "HC-SR501 PIR Sensor and Home Assistant"
 date: 2024-05-21 17:30:00 -0300
 tags: [Electronics, DIY, Computers]
-description: "Automating stair lights with an HC-SR501 PIR motion sensor, an ESP-01 and ESPHome in Home Assistant, including fixes for false triggers."
+description: "Walking down dark stairs half asleep is the worst. An HC-SR501 PIR sensor, an ESP-01 and Home Assistant fixed it."
 ---
 
 Living in a two-floor apartment has many good things and some bad things. And I assure you, trying to walk between the stairs semi-asleep in total darkness on an early winter morning is one of the worst. Follow me on my journey of automating as many things as I can at home.

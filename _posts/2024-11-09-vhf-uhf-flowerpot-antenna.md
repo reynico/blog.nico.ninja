@@ -3,7 +3,7 @@ layout: post
 title: "VHF/UHF Flowerpot antenna build"
 date: 2024-09-15 18:30:00 -0300
 tags: [Radio, DIY]
-description: "Building a simple dual-band VHF/UHF flowerpot antenna from coax at the Radio Club Buenos Aires (LU4BB): parts and assembly."
+description: "A simple dual band VHF/UHF flowerpot antenna we built at the Radio Club Buenos Aires."
 ---
 
 This year, I finally started a ham radio course to obtain my ham radio license. I have always found ham radio operation fascinating; hence, it's been a while since I played with software-defined radio. [I also gave a talk at Nerdearla last year about decoding satellite signals!](https://blog.nico.ninja/nerdearla-2023-talk-slides/)

@@ -3,7 +3,7 @@ layout: post
 title: "GOES satellite reception part 1"
 date: 2024-01-17 18:10:00 -0300
 tags: [Computers, Radio]
-description: "Part 1 of receiving GOES 16 weather satellite images on L-band (1694.1 MHz): dish and feed design, bill of materials and decoding software."
+description: "First steps to receive full-earth images from the GOES 16 satellite at 1694.1 MHz. The dish, the feed and the software."
 ---
 
 This is the first of a series of posts about receiving and decoding images from the GOES 16 satellite, a geosynchronous, sophisticated satellite that operates in L-Band (1694.1 MHz) and sends images in [HRIT](https://www.noaasis.noaa.gov/GOES/HRIT/about_hrit.html) format. The satellite sends beautiful pictures of the whole earth, and in this episode, we'll talk about the required hardware and software to make that possible. Since the proper LNA for reception is not with me yet, I wouldn't be able to test the reception yet.

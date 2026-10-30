@@ -3,7 +3,7 @@ layout: post
 title: "Monitoring the Netgear ReadyNAS with SNMP"
 date: 2023-06-13 17:30:00 -0300
 tags: [Computers, Internet]
-description: "Monitoring disk and RAID health on a Netgear ReadyNAS 312 by enabling SNMP, exploring its MIBs and scraping it with Prometheus snmp_exporter."
+description: "Keeping my ReadyNAS 312 in check with SNMP and snmp_exporter, before a disk dies on me."
 ---
 
 ![ReadyNAS 312](/assets/images/monitoring-readynas-1/readynas312.jpg)

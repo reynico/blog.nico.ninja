@@ -3,7 +3,7 @@ layout: post
 title: "Writing a custom wheel decoder for the Megasquirt"
 date: 2022-12-31 14:20:00 -0300
 tags: [Motorsports]
-description: "Writing a custom crank wheel decoder for the Honda K20/K24 engines in the Megasquirt 2 firmware: interrupt routines, pattern decoding and bench testing."
+description: "The Megasquirt 2 had no wheel decoder for Honda K20 and K24 engines, so I wrote one into the firmware."
 ---
 
 ![k24 engine](/assets/images/megasquirt-firmware-1/k24-header.jpg)

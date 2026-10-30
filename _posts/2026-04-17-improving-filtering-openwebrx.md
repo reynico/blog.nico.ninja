@@ -3,7 +3,7 @@ layout: post
 title: "Improving filtering in my SDR receiver"
 date: 2026-04-17 18:30:00 -0300
 tags: [Radio, Electronics]
-description: "Reducing noise on a HackRF One-based 2 m OpenWebRX+ receiver by adding better filtering and a low-noise amplifier."
+description: "I swapped my RTL-SDRs for a HackRF One and got a waterfall full of noise. Better filtering brought it back."
 ---
 
 A while ago, I built and made available a [dual-band VHF/UHF OpenWebRX+ Internet SDR receiver]({% post_url 2024-12-15-dual-band-openwebrx %}), [https://sdr.nico.ninja](https://sdr.nico.ninja). Time passed, and things changed. I replaced both [RTL-SDR.com](http://RTL-SDR.com) v3 SDR receivers with my old, unused HackRF One. I also decided to cover just the VHF ham radio band, from 144 to 148 MHz (and a bit more on each edge), since most hams around here are most active on the 2-meter band.

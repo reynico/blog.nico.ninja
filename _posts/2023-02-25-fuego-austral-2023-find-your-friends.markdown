@@ -3,7 +3,7 @@ layout: post
 title: "Fuego Austral 2023: Find your friends"
 date: 2023-05-08 14:20:00 -0300
 tags: [DIY, Electronics]
-description: "Building LED pendants for Fuego Austral 2023 that glow in different colors when friends are nearby, using a Wi-Fi microcontroller. Code on GitHub."
+description: "LED pendants that light up when your friends are close. Built a week before Fuego Austral 2023."
 ---
 
 ![k24 engine](/assets/images/fuego-austral-2023/fuego-austral-2023.jpg)

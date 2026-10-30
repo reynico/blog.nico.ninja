@@ -3,7 +3,7 @@ layout: post
 title: "Building a SatNOGS ground station"
 date: 2026-08-08 18:20:00 -0300
 tags: [Radio, Electronics]
-description: "Building a UHF SatNOGS satellite ground station with a double-turnstile antenna, an LNA and homemade cavity filters."
+description: "Building a UHF SatNOGS ground station, messing with turnstile antennas, LNAs and homemade cavity filters."
 ---
 
 My VHF OpenWebRX+ receiver was working flawlessly for months, and in the last few weeks I've been thinking of building something similar for the UHF band, given that there is a lot of satellite activity nowadays.

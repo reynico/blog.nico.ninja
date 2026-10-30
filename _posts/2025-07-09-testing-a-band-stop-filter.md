@@ -3,7 +3,7 @@ layout: post
 title: "Testing a band-stop filter"
 date: 2025-07-09 19:50:00 -0300
 tags: [Radio, Electronics]
-description: "Measuring the frequency response of a broadcast FM band-stop filter without a VNA, using a HackRF as the signal source and an RTL-SDR as the receiver."
+description: "No VNA at home, so I measured my FM band-stop filter with a HackRF and an RTL-SDR."
 ---
 
 Whenever I mount an SDR to listen in the 144-148 MHz band, I try to filter out the broadcast FM signals. This is due to the lack of proper filtering or channelization in the Software-Defined Radio receivers I use. The filter I use most is one described in the [LNA4ALL blog](http://lna4all.blogspot.com/2015/10/diy-fm-trap-or-88-108-mhz-band-stop.html). I even bought them a few LNAs and filters as well.

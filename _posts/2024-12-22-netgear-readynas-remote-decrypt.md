@@ -3,7 +3,7 @@ layout: post
 title: "Netgear ReadyNAS remote decryption"
 date: 2024-12-22 12:30:00 -0300
 tags: [Computers, Security]
-description: "Unlocking encrypted Netgear ReadyNAS volumes remotely after a reboot, without having to plug in the USB key in person."
+description: "My ReadyNAS needs a USB key to unlock its encrypted volumes, and I'm never home when it reboots. So I made it decrypt remotely."
 ---
 
 My [home server](https://blog.nico.ninja/my-home-server/) has a[ Netgear ReadyNAS](https://blog.nico.ninja/monitoring-netgear-readynas/) NAS where I store sensitive data. The volumes are encrypted, so if someone steals the NAS, they won't determine the disk's contents.[ ReadyOS 6.x](https://kb.netgear.com/24916/ReadyNAS-OS-Version-6-1-8) (the NAS software, based on Debian) can encrypt the volumes with an encryption key. While this is a great feature, it's a bit unflexible: You need to insert a USB device in your NAS whenever you need to decrypt your volumes. But what happens when you are not at home?

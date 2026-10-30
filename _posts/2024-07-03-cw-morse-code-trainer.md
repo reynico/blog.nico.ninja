@@ -3,7 +3,7 @@ layout: post
 title: "CW Morse code trainer"
 date: 2024-07-03 18:30:00 -0300
 tags: [Electronics, DIY]
-description: "A standalone Arduino Morse code (CW) trainer with a 20x4 HD44780 LCD, built while studying for my ham radio license."
+description: "Learning Morse code for my ham radio license with a little Arduino trainer."
 ---
 
 This year, I enrolled in a three-month ham radio course to get my ham radio license and be able to transmit and talk with the folks. The course is divided into five steps, one of which is Morse Code, or CW, in the amateur radio jargon. Practicing some Morse code with a standalone device would be cool!
