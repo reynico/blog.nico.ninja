@@ -3,7 +3,7 @@ layout: post
 title: "Controlling AC Units with Apple Home and Siri"
 date: 2023-07-09 11:00:00 -0300
 tags: [Electronics, DIY]
-description: Learn how to integrate custom protocols, automate temperature settings, and even report room temperature updates
+description: "Making non-smart air conditioners work with Apple Home and Siri: decoding the IR remote protocol, tracking power state and reporting room temperature."
 ---
 
 ![AC unit with ESP8266](/assets/images/ac-homekit-1/ac-unit-with-esp8266.jpg)

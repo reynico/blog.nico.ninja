@@ -3,7 +3,7 @@ layout: post
 title: "RadioBerry on a Yaesu FT-80C"
 date: 2026-02-04 18:30:00 -0300
 tags: [Radio, Electronics]
-description: Building a complete RadioBerry transceiver inside a Yaesu FT-80C
+description: "Building a RadioBerry SDR transceiver inside a Yaesu FT-80C while keeping the original front panel: LPF and TX switching, MIDI buttons and the HT1621B LCD."
 ---
 
 > A note for the readers: This project is fully documented (from a technical perspective) in [reynico/radioberry-setup](https://github.com/reynico/radioberry-setup)

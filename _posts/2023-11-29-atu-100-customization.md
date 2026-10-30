@@ -3,7 +3,7 @@ layout: post
 title: "ATU-100 antenna tuner configuration"
 date: 2023-11-29 11:00:00 -0300
 tags: [Radio, Electronics]
-description: My journey during the configuration of the ATU-100 antenna tuner
+description: "Changing the SWR threshold of the N7DDC ATU-100 automatic antenna tuner from 1.3:1 to 1.1:1 by editing the PIC16F1938 EEPROM."
 ---
 
 ![Kenwood TL-922 maxed out](/assets/images/atu-100-customization-1/kenwood-meter.jpg)

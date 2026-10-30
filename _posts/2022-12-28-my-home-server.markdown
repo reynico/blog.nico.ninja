@@ -3,7 +3,7 @@ layout: post
 title: "My home server"
 date: 2022-12-28 09:34:00 -0300
 tags: [Internet, DIY]
-description: Why do I have a home server and why you should as well
+description: "From a 2007 Celeron built from scrap parts to a Proxmox server: the hardware, what I run on it, and why everyone should have a home server."
 ---
 
 ![server](/assets/images/home-server-1/server-header.jpg)

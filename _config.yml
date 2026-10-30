@@ -21,6 +21,13 @@ exclude:
   - .jekyll-cache/
   - hooks/
   - compose.yml
+  - vercel.json
   - Gemfile
   - Gemfile.lock
   - vendor/
+
+defaults:
+  - scope:
+      path: "assets/files"
+    values:
+      sitemap: false

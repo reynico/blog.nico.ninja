@@ -3,7 +3,7 @@ layout: post
 title: "Synchronizing the Bitcoin blockchain with a satellite"
 date: 2023-06-15 11:00:00 -0300
 tags: [DIY, Computers, Radio]
-description: Connecting to a telecommunications satellite to download the Bitcoin blockchain using a SDR receiver and Raspberry Pi
+description: "Downloading the Bitcoin blockchain from Blockstream's satellite feed on Eutelsat 113 with an old dish, an LNB, an SDR receiver and a Raspberry Pi."
 ---
 
 ![Blockstream sync](/assets/images/satellite-bitcoin-blockchain-1/sync.jpg)

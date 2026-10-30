@@ -3,7 +3,7 @@ layout: post
 title: "What are you obsessed with?"
 date: 2025-07-27 21:40:00 -0300
 tags: [Life, Wellness]
-description: The fine line between passion and madness—and why I choose to walk it
+description: "A reflection on obsession: how it drives complex projects, where it becomes harmful, and why I still choose to walk that line."
 ---
 
 A few weeks ago, I was walking through [Parque de El Retiro in Madrid](https://en.wikipedia.org/wiki/Parque_del_Buen_Retiro,_Madrid) with my friend [Manu](https://manu.show/). During our 1:30-hour walk, we discussed many interesting topics, one of which sparked my ideas: obsession.

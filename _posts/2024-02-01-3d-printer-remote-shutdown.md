@@ -3,7 +3,7 @@ layout: post
 title: "3D printer remote shutdown"
 date: 2024-02-01 17:30:00 -0300
 tags: [Electronics, DIY]
-description: Powering down the 3d printer before bad things goes on
+description: "A near-zero-cost remote power switch for a 3D printer built from spare parts, so I can cut power when a print fails while I'm away."
 ---
 
 I've recently installed an IP camera to monitor my long-standing prints and check how it is going during the day when I am not at home. It took me not much time to realize that whether the printing process goes well or not, I cannot control the printer from any remote location.

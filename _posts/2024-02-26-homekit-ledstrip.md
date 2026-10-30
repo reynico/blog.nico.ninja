@@ -3,7 +3,7 @@ layout: post
 title: "Apple Home compatible led strip"
 date: 2024-02-26 17:30:00 -0300
 tags: [Electronics, DIY]
-description: Building an RGB led strip controllable with Apple Home
+description: "Building a DIY RGB LED strip for my office using a 5050 strip, controllable from Apple Home as a Philips Hue alternative."
 ---
 
 It's been a while since I tinkered with [HomeKit](https://en.wikipedia.org/wiki/HomeKit), Apple's framework for controlling smart home devices and appliances. My last project was [the air conditioner controller that I posted here](https://blog.nico.ninja/controlling-ac-units-apple-home/). Now, I'm considering improving my office lighting. During the early months of summer, I get plenty of sunlight through the window. However, as summer fades, or if I end up working late in the afternoon, I notice a lack of good lighting. Most of the time, I resort to setting up a lamp wherever I have enough space on my desk. So, I'm considering purchasing a Philips Hue RGB LED strip, or, better yet, building one myself.

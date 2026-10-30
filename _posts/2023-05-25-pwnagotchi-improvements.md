@@ -3,7 +3,7 @@ layout: post
 title: "Pwnagotchi fixes and improvements"
 date: 2023-05-25 14:00:00 -0300
 tags: [Computers, Electronics, DIY]
-description: Upgrading the Battery and GPS for Enhanced Performance
+description: "Replacing a swollen PiSugar2 battery with a generic 903052 cell and swapping the GPS board to bring my Pwnagotchi back to life."
 ---
 
 ![Pwnagotchi](/assets/images/pwnagotchi-fixes-1/pwnagotchi-working.jpg)

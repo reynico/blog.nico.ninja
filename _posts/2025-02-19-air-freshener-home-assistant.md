@@ -3,7 +3,7 @@ layout: post
 title: "Home Assistant-enabled Air Freshener"
 date: 2025-02-19 21:30:00 -0300
 tags: [Electronics, DIY]
-description: Automating an automatic air freshener spray dispenser
+description: "Hacking an automatic air freshener spray dispenser with an ESP chip and ESPHome so Home Assistant can trigger it and track the can level."
 ---
 
 As a disclaimer, I didn't have any real reason to do this, but I found it fascinating. These automatic air fresheners come in different forms, colors, and sizes. Still, the internals are almost always the same: An LED indicating the spray was triggered, an IR led to sense light in the room, the motor with some gears that push the lever of the can, and a PCB with two switches: one selects whether the air freshener should work during light time or 24 hours and the other determines the intervals. The PCB is offered in different flavors; mine has SMD components.

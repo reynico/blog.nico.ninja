@@ -3,7 +3,7 @@ layout: post
 title: "Simple WAN failover with MikroTik"
 date: 2024-01-04 19:30:00 -0300
 tags: [Networking, Computers, Internet]
-description: A simple but effective way to do WAN failover leveraging the problem to the recursive routes
+description: "A simple and reliable WAN failover on MikroTik RouterOS using recursive routes, with a complete dual-WAN SOHO example including VLANs."
 ---
 
 MikroTik offers many options when discussing Internet high availability, ISP redundancy, WAN failover, etc. Some ways are more complex but they offer additional features, and some others are quite straightforward, but wise at the same time. One of my favorites is **recursive routing**. 

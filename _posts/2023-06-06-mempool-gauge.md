@@ -3,7 +3,7 @@ layout: post
 title: "A Bitcoin Mempool gauge indicator"
 date: 2023-06-06 11:00:00 -0300
 tags: [Computers, DIY, Electronics]
-description: Measuring Bitcoin's next-block fee targets
+description: "A physical gauge that shows Bitcoin's next-block fee in sats/vByte, built with an ESP8266 and a micro servo, plus a fix for servos short of 180 degrees."
 ---
 
 ![Mempool Gauge](/assets/images/mempool-gauge-1/mempool-gauge.jpg)

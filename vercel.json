@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "blog-nico-ninja.vercel.app" }],
+      "destination": "https://blog.nico.ninja/:path*",
+      "permanent": true
+    }
+  ]
+}

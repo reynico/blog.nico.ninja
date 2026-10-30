@@ -3,7 +3,7 @@ layout: post
 title: "Raspberry Pi UniFi Controller Mastery"
 date: 2024-01-30 17:30:00 -0300
 tags: [Computers, Networking]
-description: Things I wish I had known before installing the Unifi Controller in a Raspberry PI
+description: "Lessons from running the UniFi Controller on a Raspberry Pi: old MongoDB versions, fragile databases, heavy disk writes and memory pressure."
 ---
 
 The [UniFi Controller software](https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hosted-UniFi-Network-Servers-Linux) offers seamless network management for users with multiple UniFi products. While setting it up on a Raspberry Pi seems like a pragmatic choice, several considerations can significantly impact your experience. The UniFi Controller software is great for managing a network if you have multiple UniFi products, such as a router/switch and a hand of UniFi UAPs.

@@ -3,7 +3,7 @@ layout: post
 title: "Lights on the Honda Cub EZ90"
 date: 2023-08-30 11:00:00 -0300
 tags: [DIY, Motorsports]
-description: How I installed lights on my EZ90
+description: "Making a Honda Cub EZ90 street-legal: installing LED headlights, turn signals, brake lights, a horn and mirrors, with parts list and wiring."
 ---
 
 ![Cub lights](/assets/images/honda-cub-ez90-lights-1/header.jpg)

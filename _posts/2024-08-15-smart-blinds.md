@@ -3,7 +3,7 @@ layout: post
 title: "Smart blinds with Home Assistant"
 date: 2024-08-15 18:30:00 -0300
 tags: [Computers, DIY]
-description: My journey installing and configuring local-only smart blind motors
+description: "Installing Tuya roller blind motors and controlling them locally from Home Assistant with HACS and localtuya, without the cloud."
 ---
 
 Since I was a kid, I have been amazed by home automation. I was surprised by being in control of a house with a centralized panel, automatic behavior depending on external factors, and the robotics behind moving parts such as roller blinds and irrigation systems. 

@@ -3,7 +3,7 @@ layout: post
 title: "Slides of my satellites talk at Nerdear.la 2023"
 date: 2024-01-17 18:10:00 -0300
 tags: [Computers, Radio]
-description: Signals from outer space, Hunting for data at thousands of kilometers was my talk at Nerdear.la 2023
+description: "Slides from my Nerdear.la 2023 talk on receiving satellite signals with open-source software and low-cost SDR receivers."
 ---
 
 ## Signals from outer space: Hunting for data at thousands of kilometers

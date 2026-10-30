@@ -3,7 +3,7 @@ layout: post
 title: "Building a Smarter Weekly Meal Planner with AI"
 date: 2025-04-27 21:00:00 -0300
 tags: [Computers, AI]
-description: Automating weekly meal planning with an AI chatbot for smarter menu suggestions
+description: "Building an AI agent that plans weekly meals, iterating on repeated dishes, seasonal food, embeddings, prompt size and penalty filters."
 ---
 
 The FOMO about AI caught me. While I use Chat GPT and Claude for some of my daily tasks (even searching for things), I missed a good opportunity by not boarding the AI Agent development wave. Intuitively, my first question was: What should I do with my AI Agent?

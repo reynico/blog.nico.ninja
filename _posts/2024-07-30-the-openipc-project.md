@@ -3,7 +3,7 @@ layout: post
 title: "The OpenIPC Project"
 date: 2024-07-30 18:30:00 -0300
 tags: [Computers, DIY]
-description: Opensourcing knockoff security cameras
+description: "Flashing OpenIPC open-source firmware on a cheap knockoff PCBOX IP camera to get RTSP video and get rid of the vendor software."
 ---
 
 Last week, my father asked if I could look at a cheap knockoff security camera, the PCBOX CIP720IPTZ. A friend of his bought it five years ago, but they never succeeded in using it, most likely due to the poor management software those cameras came with. At first glance, it is one of those white-label consumer electronics products; while it connected to the network and exposed a web server, I noticed the lack of an RTSP endpoint. *Chuckles*.

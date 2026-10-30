@@ -3,7 +3,7 @@ layout: post
 title: "RadioBerry on a Vertex VX1700"
 date: 2026-01-22 16:00:00 -0300
 tags: [Radio, Electronics]
-description: Our first steps into the RadioBerry
+description: "Turning a Vertex VX1700 into an HF SDR transceiver with the RadioBerry FPGA board and PiHPSDR: band-pass filter control, front panel and soft power off."
 ---
 
 > A note for the readers: This project is fully documented (from a technical perspective) in [reynico/radioberry-setup](https://github.com/reynico/radioberry-setup)
